@@ -18,7 +18,7 @@ css = r'''
   .mobile-visual-cta-text{font-size:10.5px;line-height:1.28;color:var(--muted)}
   .mobile-visual-cta-link{display:inline-block;margin-top:4px;font-size:10.5px;font-weight:700;text-decoration:underline;text-underline-offset:2px;color:var(--text)}
   .mobile-visual-cta-arrow{font-size:16px;line-height:1;color:#77716a}
-  .mobile-visual-return.visible{display:flex;align-items:center;justify-content:center;margin:8px 2px 2px auto;width:38px;height:38px;border-radius:50%;border:1px solid #ded8cf;background:#fff;color:#292725;box-shadow:0 3px 12px rgba(0,0,0,.06);cursor:pointer}
+  .mobile-visual-return.visible{display:flex;align-items:center;justify-content:center;margin:-8px 36px 10px auto;width:38px;height:38px;border-radius:50%;border:1px solid #ded8cf;background:#fff;color:#292725;box-shadow:0 3px 12px rgba(0,0,0,.06);cursor:pointer;position:relative;z-index:4}
   .mobile-visual-return svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
 }
 '''
