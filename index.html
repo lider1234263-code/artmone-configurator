@@ -977,8 +977,10 @@ max-width:calc(100% - 32px)!important;
 
 
 
+
 /* MOBILE_VISUAL_CTA */
 .mobile-visual-cta{display:none}
+.mobile-logo-visual-cta{display:none}
 .mobile-visual-return{display:none}
 @media(max-width:900px){
   .mobile-visual-cta{display:block;margin:6px 0;border:1px solid #e7e0d6;background:#fbfaf7;border-radius:12px;padding:10px 12px;cursor:pointer}
@@ -990,6 +992,10 @@ max-width:calc(100% - 32px)!important;
   .mobile-visual-cta-text{font-size:10.5px;line-height:1.28;color:var(--muted)}
   .mobile-visual-cta-link{display:inline-block;margin-top:4px;font-size:10.5px;font-weight:700;text-decoration:underline;text-underline-offset:2px;color:var(--text)}
   .mobile-visual-cta-arrow{font-size:16px;line-height:1;color:#77716a}
+
+  .mobile-logo-visual-cta.visible{display:block;margin:8px 0 10px;border:1px solid #e7e0d6;background:#fbfaf7;border-radius:12px;padding:10px 12px;cursor:pointer}
+  .mobile-logo-visual-cta .mobile-visual-cta-icon{background:#f4f6f1;border-color:#dfe7da;color:#52624a}
+
   .mobile-visual-return.visible{display:flex;align-items:center;justify-content:center;margin:-8px 36px 10px auto;width:38px;height:38px;border-radius:50%;border:1px solid #ded8cf;background:#fff;color:#292725;box-shadow:0 3px 12px rgba(0,0,0,.06);cursor:pointer;position:relative;z-index:4}
   .mobile-visual-return svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
 }
@@ -1775,12 +1781,10 @@ render();
 
 
 
+
 /* MOBILE_VISUAL_CTA_JS */
 (function(){
-  const oldCard=document.getElementById('mobileVisualCta');
-  if(oldCard) oldCard.remove();
-  const oldReturn=document.getElementById('mobileVisualReturn');
-  if(oldReturn) oldReturn.remove();
+  ['mobileVisualCta','mobileLogoVisualCta','mobileVisualReturn'].forEach(id=>{const el=document.getElementById(id);if(el)el.remove();});
 
   const printsEl=document.getElementById('prints');
   if(!printsEl) return;
@@ -1795,6 +1799,15 @@ render();
   card.innerHTML='<div class="mobile-visual-cta-inner"><div class="mobile-visual-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.8"></circle></svg></div><div class="mobile-visual-cta-copy"><div class="mobile-visual-cta-title">Побачити вашу комбінацію</div><div class="mobile-visual-cta-text">Стрічка + колір друку вже показані на фото</div><div class="mobile-visual-cta-link">Переглянути візуалізацію ↑</div></div><div class="mobile-visual-cta-arrow">↑</div></div>';
   printPanel.insertAdjacentElement('afterend',card);
 
+  const configOk=document.getElementById('configOk');
+  const logoCard=document.createElement('div');
+  logoCard.id='mobileLogoVisualCta';
+  logoCard.className='mobile-logo-visual-cta';
+  logoCard.setAttribute('role','button');
+  logoCard.setAttribute('tabindex','0');
+  logoCard.innerHTML='<div class="mobile-visual-cta-inner"><div class="mobile-visual-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.8"></circle></svg></div><div class="mobile-visual-cta-copy"><div class="mobile-visual-cta-title">Переглянути візуалізацію з вашим логотипом</div><div class="mobile-visual-cta-text">Ваш логотип уже нанесено на стрічку у фото вище</div><div class="mobile-visual-cta-link">Подивитися результат ↑</div></div><div class="mobile-visual-cta-arrow">↑</div></div>';
+  if(configOk) configOk.insertAdjacentElement('afterend',logoCard);
+
   const thumbs=document.getElementById('galleryThumbs');
   const returnBtn=document.createElement('button');
   returnBtn.id='mobileVisualReturn';
@@ -1804,20 +1817,38 @@ render();
   returnBtn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>';
   if(thumbs) thumbs.insertAdjacentElement('afterend',returnBtn);
 
-  const goUp=()=>{
+  let returnTarget=card;
+  const syncLogoCard=()=>{
+    let hasLogo=false;
+    try{hasLogo=typeof activeLogo==='function' && !!activeLogo();}catch(e){}
+    logoCard.classList.toggle('visible',hasLogo);
+  };
+
+  const goUp=(source)=>{
     const gallery=document.querySelector('.photo-gallery');
     if(!gallery) return;
+    returnTarget=source||card;
     returnBtn.classList.add('visible');
     gallery.scrollIntoView({behavior:'smooth',block:'start'});
   };
   const goBack=()=>{
-    card.scrollIntoView({behavior:'smooth',block:'center'});
+    if(returnTarget) returnTarget.scrollIntoView({behavior:'smooth',block:'center'});
     returnBtn.classList.remove('visible');
   };
 
-  card.addEventListener('click',goUp);
-  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goUp();}});
+  card.addEventListener('click',()=>goUp(card));
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goUp(card);}});
+  logoCard.addEventListener('click',()=>goUp(logoCard));
+  logoCard.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goUp(logoCard);}});
   returnBtn.addEventListener('click',goBack);
+
+  const originalRenderConversionTools=window.renderConversionTools;
+  if(typeof originalRenderConversionTools==='function'){
+    window.renderConversionTools=function(){const r=originalRenderConversionTools.apply(this,arguments);syncLogoCard();return r;};
+  }
+  document.getElementById('sharedLogoInput')?.addEventListener('change',()=>setTimeout(syncLogoCard,250));
+  document.getElementById('customLogoInput')?.addEventListener('change',()=>setTimeout(syncLogoCard,250));
+  syncLogoCard();
 })();
 
 </script>
