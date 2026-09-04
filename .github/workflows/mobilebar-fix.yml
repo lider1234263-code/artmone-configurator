@@ -14,43 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Pin mobile bar to visible bottom
+      - name: Pin mobile bar to bottom
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
-
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
-
-          new_css = '''/* iOS mobilebar viewport fix */
-@media(max-width:900px){
-  .mobilebar{
-    position:fixed!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    top:auto!important;
-    margin:0!important;
-    z-index:9999!important;
-    width:100%!important;
-    box-sizing:border-box!important;
-    transform:none!important;
-    -webkit-transform:none!important;
-    padding:9px 11px calc(9px + env(safe-area-inset-bottom))!important;
-  }
-  body{
-    padding-bottom:calc(72px + env(safe-area-inset-bottom))!important;
-  }
-}
-'''
-
+          css = "/* iOS mobilebar viewport fix */\n@media(max-width:900px){.mobilebar{position:fixed!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;margin:0!important;z-index:9999!important;width:100%!important;box-sizing:border-box!important;transform:none!important;-webkit-transform:none!important;padding:9px 11px calc(9px + env(safe-area-inset-bottom))!important;}body{padding-bottom:calc(72px + env(safe-area-inset-bottom))!important;}}\n"
           pattern = re.compile(r'/\* iOS mobilebar viewport fix \*/.*?(?=</style>)', re.S)
           if pattern.search(s):
-              s = pattern.sub(new_css + '\n', s, count=1)
+              s = pattern.sub(css + '\n', s, count=1)
           else:
-              s = s.replace('</style>', new_css + '\n</style>', 1)
-
+              s = s.replace('</style>', css + '\n</style>', 1)
           p.write_text(s, encoding='utf-8')
           print('Mobile bar CSS replaced')
           PY
