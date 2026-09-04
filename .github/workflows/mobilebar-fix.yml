@@ -14,20 +14,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Stabilize mobile bottom bar on iOS Safari
+      - name: Pin mobile bar to visible bottom
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
+
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
-          marker = '/* iOS mobilebar viewport fix */'
-          css = "\n/* iOS mobilebar viewport fix */\n@media(max-width:900px){.mobilebar{position:fixed!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;margin:0!important;z-index:9999!important;transform:translate3d(0,0,0)!important;-webkit-transform:translate3d(0,0,0)!important;backface-visibility:hidden;-webkit-backface-visibility:hidden;width:100%!important;box-sizing:border-box!important;}}\n@supports(height:100dvh){@media(max-width:900px){.mobilebar{bottom:auto!important;top:calc(100dvh - 72px - env(safe-area-inset-bottom))!important;min-height:72px!important;}body{padding-bottom:calc(72px + env(safe-area-inset-bottom))!important;}}}\n"
-          if marker not in s:
-              s = s.replace('</style>', css + '</style>', 1)
-              p.write_text(s, encoding='utf-8')
-              print('Patch applied')
+
+          new_css = '''/* iOS mobilebar viewport fix */
+@media(max-width:900px){
+  .mobilebar{
+    position:fixed!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    top:auto!important;
+    margin:0!important;
+    z-index:9999!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+    padding:9px 11px calc(9px + env(safe-area-inset-bottom))!important;
+  }
+  body{
+    padding-bottom:calc(72px + env(safe-area-inset-bottom))!important;
+  }
+}
+'''
+
+          pattern = re.compile(r'/\* iOS mobilebar viewport fix \*/.*?(?=</style>)', re.S)
+          if pattern.search(s):
+              s = pattern.sub(new_css + '\n', s, count=1)
           else:
-              print('Patch already applied')
+              s = s.replace('</style>', new_css + '\n</style>', 1)
+
+          p.write_text(s, encoding='utf-8')
+          print('Mobile bar CSS replaced')
           PY
       - name: Commit patch
         run: |
@@ -38,5 +63,5 @@ jobs:
           git config user.name 'ArtMone Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add index.html
-          git commit -m 'Keep mobile order bar pinned to viewport bottom'
+          git commit -m 'Pin mobile order bar to screen bottom'
           git push
