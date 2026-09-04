@@ -1,0 +1,8 @@
+{
+  "version": "v16-static-prebuilt",
+  "ribbon_colors": 47,
+  "print_colors": 34,
+  "scenes": 7,
+  "prebuilt_images": 11186,
+  "gallery_behavior": "selected scene persists; each ribbon+print+scene is a separate ready WebP"
+}

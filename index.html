@@ -1,0 +1,1639 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ArtMone — стрічка з логотипом</title>
+<style>
+:root{--bg:#fbfaf7;--card:#fff;--line:#e8e2d9;--text:#171717;--muted:#706c66;--cream:#f5eee2;--gold:#c9a45f;--ribbon:#788454;--print:#171717}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button,input{font:inherit}
+header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.header{height:72px;max-width:1280px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}.logo{font:500 38px Georgia,serif}.logo small{display:block;text-align:center;font:700 8px Arial;letter-spacing:6px}.topbtn,.order{border:0;background:#171717;color:#fff;border-radius:9px;padding:13px 18px}.main{max-width:1280px;margin:22px auto;padding:0 22px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(420px,.94fr);gap:24px;align-items:start}
+.visual{position:relative;border-radius:18px;overflow:hidden;min-height:620px;background:linear-gradient(145deg,#e8ddcf,#cdbcaa);border:1px solid var(--line)}.badge{position:absolute;top:18px;left:18px;z-index:5;background:#f6ead3;border-radius:9px;padding:9px 12px;font-size:12px;font-weight:800}.scene{position:absolute;inset:0;display:none;overflow:hidden}.scene.active{display:block}.silk{position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.72),transparent 24%),linear-gradient(145deg,#eadfce,#cdbba6)}.spool{position:absolute;width:265px;height:265px;border-radius:50%;background:repeating-radial-gradient(circle,var(--ribbon) 0 5px,rgba(0,0,0,.08) 6px 7px),var(--ribbon);box-shadow:0 30px 55px rgba(0,0,0,.22)}.spool:after{content:"";position:absolute;inset:38%;border-radius:50%;background:#222}.ribbon-strip{position:absolute;height:88px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.16),transparent 28%,rgba(0,0,0,.08) 80%),var(--ribbon);box-shadow:0 18px 35px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;color:var(--print);font:42px Georgia,serif;letter-spacing:2px}.s1 .spool{left:33%;top:9%}.s1 .ribbon-strip.a{left:7%;right:10%;top:47%;transform:rotate(-9deg)}.s1 .ribbon-strip.b{left:-4%;right:20%;bottom:12%;transform:rotate(6deg)}.box{position:absolute;background:#d8c5ae;border-radius:8px;box-shadow:0 24px 50px rgba(0,0,0,.15)}.box.ribboned:before,.box.ribboned:after{content:"";position:absolute;background:var(--ribbon)}.box.ribboned:before{left:43%;width:14%;top:0;bottom:0}.box.ribboned:after{top:43%;height:14%;left:0;right:0}.bow{position:absolute;left:50%;top:27%;transform:translate(-50%,-50%);width:130px;height:70px}.bow:before,.bow:after{content:"";position:absolute;width:78px;height:46px;border:18px solid var(--ribbon);border-radius:60% 60% 60% 10%;top:0}.bow:before{right:50%;transform:rotate(18deg)}.bow:after{left:50%;transform:scaleX(-1) rotate(18deg)}.s2 .box{width:58%;height:55%;left:21%;top:25%}.s2 .logo-print{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);color:var(--print);font:29px Georgia,serif;z-index:2}.s3{background:linear-gradient(135deg,#f4eee5,#ddcfbe)}.bag{position:absolute;width:48%;height:60%;left:26%;top:20%;background:#e7dbc8;border-radius:4px;box-shadow:0 28px 55px rgba(0,0,0,.14)}.bag:before{content:"";position:absolute;left:27%;right:27%;top:-60px;height:80px;border:12px solid var(--ribbon);border-bottom:0;border-radius:60px 60px 0 0}.bag .logo-print{position:absolute;left:0;right:0;top:48%;text-align:center;color:var(--print);font:32px Georgia,serif}.s3 .ribbon-strip{left:-9%;right:-7%;top:42%;transform:rotate(12deg);font-size:50px}.s4{background:linear-gradient(135deg,#ded6cb,#bbb0a1)}.s4 .bag{left:8%;top:24%;width:41%;height:55%}.s4 .box{right:7%;top:31%;width:41%;height:41%}.s4 .ribbon-strip{left:43%;right:-6%;top:54%;height:62px;transform:rotate(-13deg);font-size:28px}.s5{background:linear-gradient(145deg,#f6f0e8,#dfd2c2)}.s5 .box{left:16%;top:19%;width:68%;height:62%;background:#f0e6d9}.s5 .ribbon-strip{left:0;right:0;top:43%;height:65px;border-radius:0;font-size:31px}.s5 .vertical{position:absolute;top:0;bottom:0;left:43%;width:14%;background:var(--ribbon)}.real-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.overlay{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(255,255,255,.9);border-radius:13px;padding:13px 15px;display:flex;justify-content:space-between;gap:12px;font-size:11px}.thumbs{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:9px}.thumb{aspect-ratio:1;border:1px solid var(--line);border-radius:11px;background:#ece3d7;cursor:pointer;overflow:hidden;position:relative}.thumb.active{outline:2px solid var(--gold);outline-offset:-2px}.thumb .mini-strip{position:absolute;left:8%;right:8%;top:40%;height:18%;border-radius:999px;background:var(--ribbon);color:var(--print);display:grid;place-items:center;font:10px Georgia}.thumb img{width:100%;height:100%;object-fit:cover}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.feat{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 8px;text-align:center;font-size:10px;line-height:1.4}.feat b{display:block;font-size:11px;margin-bottom:4px}
+h1{font:500 43px/1.04 Georgia,serif;margin:3px 0 8px}.subtitle{color:var(--muted);font-size:13px;margin-bottom:14px}.config-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.panel{border:1px solid var(--line);background:#fff;border-radius:14px;padding:15px;min-width:0}.panel.full{grid-column:1/-1}.phead{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:800;margin-bottom:12px}.step{width:23px;height:23px;border-radius:50%;display:inline-grid;place-items:center;background:#111;color:#fff;font-size:11px;margin-right:7px}.link{border:0;background:none;text-decoration:underline;font-size:10px}.current{display:flex;gap:10px;align-items:center;margin-bottom:11px}.current-dot{width:48px;height:48px;border-radius:50%;background:var(--ribbon)}.current b{font-size:13px}.current span{display:block;color:var(--muted);font-size:10px}.swatches{display:flex;gap:8px;flex-wrap:wrap}.swatch{width:31px;height:31px;border-radius:50%;border:2px solid white;outline:1px solid #ddd}.swatch.active{outline:2px solid #111}.more{border:1px solid var(--line);background:#f5f3ef;border-radius:18px;height:31px;min-width:42px}.widths{display:flex;gap:7px;flex-wrap:wrap}.choice{padding:10px 12px;min-width:57px;border:1px solid #ddd;background:#fff;border-radius:8px}.choice.active{box-shadow:inset 0 0 0 1px #111;border-color:#111}.choice.disabled{opacity:.3}.hint{font-size:9.5px;color:var(--muted);margin-top:10px}.prints{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 7px}.print{flex:0 0 49px;text-align:center;font-size:8.5px;cursor:pointer}.pc{width:34px;height:34px;border-radius:50%;margin:0 auto 5px;outline:1px solid #ddd;box-shadow:inset 3px 3px 7px rgba(255,255,255,.35),inset -3px -3px 7px rgba(0,0,0,.09)}.print.active .pc{outline:2px solid #111;outline-offset:2px}.print b{display:block;font-size:9px}.note{background:var(--cream);border:1px solid #ead8bd;border-radius:9px;padding:10px 11px;font-size:10px;line-height:1.4;margin-top:7px}.qtygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.qtygrid button{padding:10px 4px;border:1px solid #ddd;background:#fff;border-radius:8px;position:relative;font-size:11px}.qtygrid button.active{background:#151515;color:#fff}.hit{position:absolute;top:-8px;right:4px;background:#c6a25d;color:white;border-radius:6px;padding:2px 5px;font-size:7px}.qtycustom{display:grid;grid-template-columns:44px 1fr 44px;gap:7px;margin-top:7px}.qtycustom button,.qtycustom input{height:43px;border:1px solid #ddd;background:white;border-radius:8px;text-align:center}.terms{display:grid;grid-template-columns:1fr 1fr;gap:8px}.term{border:1px solid #ddd;border-radius:9px;padding:12px;background:#fff;text-align:left;font-size:10.5px;line-height:1.45}.term.active{box-shadow:inset 0 0 0 1px #111;border-color:#111}.radio{display:inline-block;width:13px;height:13px;border:1px solid #999;border-radius:50%;vertical-align:-2px;margin-right:6px;position:relative}.term.active .radio:after{content:"";position:absolute;inset:3px;border-radius:50%;background:#111}.red{color:#d21e1e;font-weight:800}.summary{margin-top:10px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:16px}.summary h2{font:600 25px Georgia,serif;margin:0 0 8px}.row{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dotted #ddd;padding:7px 0;font-size:10.5px}.row b{text-align:right}.totalwrap{display:flex;justify-content:space-between;align-items:end;margin-top:13px}.totalwrap strong{font-size:35px}.perm{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:10px}.order{width:100%;margin-top:10px;font-size:14px}
+.lower,.faq-contact{max-width:1280px;margin:18px auto 0;padding:0 22px;display:grid;grid-template-columns:1.1fr 1fr;gap:12px}.lower-card{border:1px solid var(--line);background:#fff;border-radius:14px;padding:18px}.lower h2,.faq-contact h2{font:600 25px Georgia,serif;margin:0 0 15px}.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.why-item{font-size:10px;line-height:1.45}.why-icon{font-size:27px;margin-bottom:8px}.why-item b{display:block;font-size:11px}.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.review{border:1px solid var(--line);border-radius:11px;padding:12px;font-size:10px;line-height:1.5}.stars{color:#d4a83a;letter-spacing:1px}.review b{display:block;margin-top:9px}details{padding:12px 0;border-bottom:1px solid var(--line);font-size:11px}.contact{background:var(--cream)}.contact .order{background:#fff;color:#171717;border:1px solid #b79354}.catalog{position:fixed;inset:0;z-index:80;background:#fbfaf7;display:none;overflow:auto}.catalog.open{display:block}.cathead{position:sticky;top:0;background:#fbfaf7;border-bottom:1px solid var(--line);padding:15px 20px;display:flex;justify-content:space-between}.groups{max-width:1000px;margin:auto;padding:15px 18px 40px}.gtitle{font:600 22px Georgia,serif;margin:20px 0 10px}.catgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.catitem{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px;display:flex;gap:9px;align-items:center;text-align:left}.catdot{width:40px;height:40px;border-radius:50%;flex:0 0 auto}.catitem b{font-size:10.5px;display:block}.catitem span{font-size:9px;color:var(--muted)}.mobilebar{display:none}
+
+/* Approved 7-scene mockup system: isolated geometry, no image-wide color overlays */
+.bouquet .wrap{position:absolute;left:16%;right:16%;bottom:4%;height:58%;background:linear-gradient(145deg,#f4eee8,#d9c6b5);clip-path:polygon(0 18%,50% 0,100% 18%,82% 100%,18% 100%)}
+.flower{position:absolute;z-index:2;font-size:118px;color:#f4d9d6;text-shadow:0 8px 22px rgba(0,0,0,.08)}.f1{left:16%;top:8%}.f2{left:37%;top:3%;color:#fff2e8}.f3{right:15%;top:10%;color:#ead0d5}.f4{left:34%;top:18%;font-size:96px;color:#f6eee3}.bouquet-band{z-index:4;left:5%;right:4%;top:59%;height:72px;transform:rotate(7deg);font-size:25px}.bouquet .bow{z-index:5;top:60%;left:52%}
+.spoolscene .spool{left:32%;top:8%}.spoolscene .ribbon-strip.a{left:6%;right:8%;top:49%;transform:rotate(-8deg)}.spoolscene .ribbon-strip.b{left:-4%;right:17%;bottom:11%;transform:rotate(7deg)}
+.macro-ribbon{position:absolute;left:-8%;right:-8%;top:31%;height:190px;transform:rotate(-8deg);display:flex;align-items:center;justify-content:center;white-space:nowrap;background:linear-gradient(180deg,rgba(255,255,255,.24),transparent 30%,rgba(0,0,0,.13) 90%),var(--ribbon);color:var(--print);font:52px Georgia,serif;letter-spacing:3px;box-shadow:0 30px 55px rgba(0,0,0,.18)}
+.gift .box{width:64%;height:52%;left:18%;top:27%;background:#e8d6be}.gift .gift-print{position:absolute;z-index:4;left:0;right:0;top:53%;text-align:center;color:var(--print);font:24px Georgia}.gift .bow{z-index:4;top:29%}
+.beauty .jewelbox{position:absolute;left:24%;right:24%;top:27%;bottom:20%;background:#eee5d9;border-radius:9px;box-shadow:0 25px 55px rgba(0,0,0,.16);display:flex;align-items:flex-end;justify-content:center;padding-bottom:10%;font:18px Georgia;color:#6d645b}.beauty-band{z-index:3;left:10%;right:10%;top:48%;height:64px;font-size:25px}.beauty .bow.small{z-index:4;top:47%;transform:translate(-50%,-50%) scale(.72)}
+.cake .cakebox{position:absolute;left:15%;right:15%;top:23%;bottom:18%;background:#f7f5f0;border-radius:9px;box-shadow:0 24px 50px rgba(0,0,0,.14)}.cake .window{position:absolute;left:12%;right:12%;top:14%;bottom:20%;background:#dfc9ad;border:12px solid #fff;display:grid;place-items:center;font-size:48px;color:#fff}.cake-band{z-index:3;left:8%;right:8%;top:52%;height:64px;font-size:24px}.cake .bow{z-index:4;top:52%;transform:translate(-50%,-50%) scale(.7)}
+.rollwall{position:absolute;inset:13% 8% 18%;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:center}.stock-roll{aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,var(--ribbon) 0 4px,rgba(0,0,0,.09) 5px 6px),var(--ribbon);box-shadow:0 14px 25px rgba(0,0,0,.17);position:relative}.stock-roll:after{content:'';position:absolute;inset:38%;border-radius:50%;background:#b99b72}.stock-caption{position:absolute;left:0;right:0;bottom:8%;text-align:center;font-weight:800;font-size:14px;letter-spacing:1px}
+@media(max-width:900px){.header{height:61px;padding:0 14px}.logo{font-size:30px}.topbtn{display:none}.main{display:block;padding:0 10px;margin-top:12px}.visual{min-height:430px}.spool{width:180px;height:180px}.ribbon-strip{height:62px;font-size:26px}.thumbs{gap:5px}.features{gap:5px}.feat{padding:10px 5px;font-size:8.5px}.feat b{font-size:9px}h1{font-size:32px;margin-top:21px}.config-grid{display:block}.panel{margin-bottom:8px}.lower,.faq-contact{display:block;padding:0 10px}.lower-card{margin-bottom:9px}.why{grid-template-columns:repeat(2,1fr)}.reviews{display:flex;overflow-x:auto}.review{min-width:78%}.catgrid{grid-template-columns:repeat(2,1fr)}.mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:9px 11px calc(9px + env(safe-area-inset-bottom));align-items:center;gap:10px}.mobilebar div{flex:1}.mobilebar span{display:block;font-size:9px;color:var(--muted)}.mobilebar b{font-size:19px}.mobilebar button{background:#171717;color:#fff;border:0;border-radius:8px;padding:13px 18px}body{padding-bottom:72px}}
+
+.photo-gallery{background:#e9dfd4}
+.gallery-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#mockupCanvas{display:block}
+#galleryThumbs .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+#galleryThumbs .thumb{background:#eee7dc}
+@media(max-width:900px){.photo-gallery{min-height:430px}}
+
+#mockupCanvas{image-rendering:auto}
+#galleryThumbs .thumb img{image-rendering:auto}
+
+/* TECH-ONLY gallery: mockups intentionally removed until final graphics stage */
+#mockupPlaceholder{display:block;background:#ece3d7;}
+#galleryThumbs .thumb:not([data-scene="warehouse"]){background:#ece3d7;}
+#galleryThumbs .thumb:not([data-scene="warehouse"]) img{display:block;}
+
+/* Wholesale benefit */
+.qtygrid button{position:relative}
+.qtygrid button .saving{
+  position:absolute;
+  top:-5px;
+  right:5px;
+  left:auto;
+  z-index:2;
+  display:block;
+  margin:0;
+  padding:2px 5px;
+  border-radius:5px;
+  background:#ece9e4;
+  color:#77716a;
+  font-size:6px;
+  line-height:1;
+  font-weight:800;
+  white-space:nowrap;
+  pointer-events:none;
+  box-shadow:0 0 0 1px rgba(90,80,70,.04);
+}
+.qtygrid button.active .saving{
+  background:#e7e3dd;
+  color:#69635d;
+  opacity:1;
+}
+.wholesale-benefit{
+  margin-top:12px;
+  padding:13px 14px;
+  border:1px solid #dce9df;
+  background:#f7fbf8;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.wholesale-benefit.hidden{display:none}
+.wholesale-benefit .wb-label{
+  font-size:10px;
+  color:#587064;
+  margin-bottom:3px;
+}
+.wholesale-benefit .wb-percent{
+  font-size:18px;
+  font-weight:850;
+  color:#286d46;
+  letter-spacing:-.02em;
+}
+.wholesale-benefit .wb-money{
+  text-align:right;
+}
+.wholesale-benefit .wb-money span{
+  display:block;
+  font-size:9px;
+  color:#6d7c73;
+  margin-bottom:3px;
+}
+.wholesale-benefit .wb-money b{
+  font-size:15px;
+  color:#286d46;
+}
+@media(max-width:600px){
+  .wholesale-benefit{padding:11px 12px}
+  .wholesale-benefit .wb-percent{font-size:16px}
+  .wholesale-benefit .wb-money b{font-size:14px}
+}
+
+
+.qtygrid button .hit{
+  left:5px;
+  right:auto;
+}
+
+
+/* Compact quantity custom control: same proportion on desktop and mobile.
+   Width equals the last two mileage buttons: 5,000 m + 10,000 m. */
+.qtycustom{
+  width:calc((100% - 7px) * 2 / 3);
+  grid-template-columns:30px minmax(0,1fr) 30px;
+  gap:7px;
+  margin-top:7px;
+  margin-left:0;
+  margin-right:auto;
+}
+.qtycustom button,
+.qtycustom input{
+  width:100%;
+  min-width:0;
+  height:34px;
+  box-sizing:border-box;
+}
+.qtycustom button{
+  padding:0;
+  font-size:15px;
+}
+.qtycustom input{
+  font-size:11px;
+}
+@media(max-width:600px){
+  .qtycustom{
+    width:calc((100% - 7px) * 2 / 3);
+    grid-template-columns:30px minmax(0,1fr) 30px;
+  }
+  .qtycustom button,
+  .qtycustom input{
+    height:34px;
+  }
+}
+
+
+/* Print colors: compact size matched to ribbon color swatches */
+.prints{gap:8px}
+.print{
+  flex:0 0 31px;
+  width:31px;
+  min-width:31px;
+  font-size:7px;
+}
+.pc{
+  width:31px;
+  height:31px;
+  margin:0 auto 5px;
+}
+.print b{
+  font-size:7.5px;
+  line-height:1.1;
+}
+.print span{
+  display:block;
+  font-size:6.5px;
+  line-height:1.1;
+  white-space:nowrap;
+}
+
+
+/* Grouped print-color catalog */
+#printCatalog .gtitle{margin-top:15px}
+#printCatalog .gtitle:first-child{margin-top:0}
+@media(max-width:600px){
+  #printCatalog .catgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #printCatalog .catitem{padding:9px 8px;gap:7px;min-width:0}
+  #printCatalog .catitem>span:last-child{min-width:0}
+  #printCatalog .catitem b{font-size:9px;line-height:1.15}
+  #printCatalog .catitem span span{font-size:7px}
+}
+
+
+/* Mobile: always show the extra color buttons for ribbon and print */
+@media(max-width:600px){
+  .swatches{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    overflow:visible;
+  }
+  .swatches .more{
+    display:inline-grid;
+    place-items:center;
+    width:31px;
+    min-width:31px;
+    height:31px;
+    padding:0;
+    border-radius:50%;
+    flex:0 0 31px;
+    font-size:8px;
+  }
+  .prints{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    overflow:visible;
+    padding:2px 2px 7px;
+  }
+  .prints .print{
+    display:block;
+    flex:0 0 31px;
+    width:31px;
+    min-width:31px;
+  }
+  .prints .print:last-child{
+    display:block;
+  }
+}
+
+
+/* Mobile: compact term buttons, ~17% less vertical space */
+@media(max-width:600px){
+  .terms{gap:8px}
+  .term{
+    min-height:0;
+    padding:11px 14px;
+  }
+}
+
+
+/* Term buttons: compact on both desktop and mobile */
+.term{
+  min-height:0;
+  padding:8.75px 12px;
+}
+@media(max-width:600px){
+  .terms{gap:8px}
+  .term{
+    min-height:0;
+    padding:10px 12px;
+  }
+}
+
+
+.term-workdays-hint{
+  margin-top:8px;
+  font-size:8px;
+  line-height:1.35;
+  color:var(--muted);
+}
+@media(max-width:600px){
+  .term-workdays-hint{
+    margin-top:7px;
+    font-size:7.5px;
+  }
+}
+
+
+/* Height selector: ~15% more compact on web and mobile */
+.widths{gap:7px}
+.choice{
+  padding:10px 12px;
+  min-height:0;
+}
+@media(max-width:600px){
+  .widths{gap:7px}
+  .choice{
+    padding:9px 10px;
+    min-height:0;
+  }
+}
+
+
+/* Compact two-line production term feature */
+.term-feature span{
+  display:block;
+  font-size:7.5px;
+  line-height:1.25;
+  margin-top:2px;
+}
+.term-feature span strong{
+  font-weight:800;
+}
+@media(max-width:600px){
+  .term-feature span{
+    font-size:7px;
+    line-height:1.22;
+    margin-top:2px;
+  }
+}
+
+
+/* ===== Approved summary pricing visualization ===== */
+.summary .design-row b{font-weight:800}
+.price-card{
+  margin-top:13px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:15px 14px 12px;
+  text-align:center;
+  background:#fff;
+}
+.regular-price{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  margin-bottom:6px;
+  color:var(--muted);
+  font-size:9px;
+}
+.regular-price del{
+  color:#5f5b57;
+  font-size:16px;
+  line-height:1.15;
+  text-decoration-thickness:1.5px;
+}
+.current-total{
+  display:block;
+  color:#111;
+  font-size:28px;
+  line-height:1.05;
+  font-weight:850;
+  letter-spacing:-.5px;
+}
+.wholesale-benefit{
+  margin:12px auto 0;
+  padding:9px 11px;
+  border:1px solid #d7ead9;
+  background:#f0f9f1;
+  color:#258433;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  font-size:9px;
+  line-height:1.2;
+}
+.wholesale-benefit b{font-weight:800}
+.price-card .perm{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+@media(max-width:600px){
+  .price-card{
+    margin-top:12px;
+    padding:14px 11px 11px;
+  }
+  .regular-price{font-size:8px}
+  .regular-price del{font-size:15px}
+  .current-total{font-size:26px}
+  .wholesale-benefit{
+    margin-top:11px;
+    padding:8px 9px;
+    font-size:8px;
+  }
+  .price-card .perm{
+    margin-top:11px;
+    padding-top:9px;
+  }
+}
+
+
+/* ===== ArtMone typography refresh =====
+   UI: DM Sans
+   Editorial headings: Libre Caslon Display
+*/
+html,body,button,input,select,textarea{
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+body{
+  font-weight:400;
+  letter-spacing:-.01em;
+}
+h1,
+.summary h2,
+.lower-card>h2,
+.faq-contact h2{
+  font-family:"Libre Caslon Display","Times New Roman",serif;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+#config>h1{
+  font-family:"Libre Caslon Display","Times New Roman",serif;
+  font-weight:400;
+}
+.phead,
+.phead button,
+.choice,
+.term,
+.qtygrid button,
+.print,
+.cathead,
+.gtitle,
+.catitem,
+.row,
+.note,
+.hint,
+.feat,
+.order,
+.mobilebar{
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+.current b,
+.phead>div,
+.summary .row b,
+.current-total,
+.wholesale-benefit b{
+  font-weight:700;
+}
+.subtitle,
+.hint,
+.note,
+.row span,
+.perm{
+  font-weight:400;
+}
+
+
+/* Wholesale discount badges: ~10% larger for readability */
+.qtygrid button .saving{
+  font-size:6.6px;
+  padding:2.2px 5.5px;
+  border-radius:5.5px;
+}
+
+
+/* ===== Multi-ribbon order flow ===== */
+.ribbon-tabs-wrap{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:12px 0 10px;
+}
+.ribbon-tabs{
+  display:flex;
+  gap:7px;
+  min-width:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.ribbon-tabs::-webkit-scrollbar{display:none}
+.ribbon-tab,
+.ribbon-tab-add{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:9px;
+  height:34px;
+  padding:0 12px;
+  font:700 9px/1 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  white-space:nowrap;
+  cursor:pointer;
+}
+.ribbon-tab.active{
+  border-color:#222;
+  box-shadow:inset 0 0 0 1px #222;
+}
+.ribbon-tab .tab-check{
+  margin-left:4px;
+  font-size:8px;
+}
+.ribbon-tab-add{
+  flex:0 0 34px;
+  width:34px;
+  padding:0;
+  font-size:16px;
+}
+.add-ribbon-main{
+  width:100%;
+  margin:9px 0 0;
+  min-height:40px;
+  border:1px dashed #cfc8bd;
+  background:#faf8f4;
+  border-radius:11px;
+  font:700 10px/1 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  cursor:pointer;
+}
+.add-ribbon-main:hover{background:#f6f2eb}
+.order-items{
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+.order-item{
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:10px 11px;
+  background:#fbfaf8;
+}
+.order-item-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+}
+.order-item-title{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+}
+.order-item-dot{
+  flex:0 0 16px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  border:1px solid rgba(0,0,0,.12);
+}
+.order-item-title b{
+  display:block;
+  font-size:9.5px;
+  line-height:1.2;
+}
+.order-item-title span{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:7.5px;
+  line-height:1.25;
+}
+.order-item-price{
+  flex:0 0 auto;
+  text-align:right;
+}
+.order-item-price b{
+  display:block;
+  font-size:10px;
+  line-height:1.15;
+}
+.order-item-saving{
+  display:block;
+  margin-top:3px;
+  color:#258433;
+  font-size:7px;
+  line-height:1.2;
+}
+.order-item-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  margin-top:7px;
+}
+.order-item-actions button{
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#6f6962;
+  font:600 7.5px/1 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.order-item-actions .remove-item{color:#9b5757}
+.order-meta{margin-top:10px}
+.summary .price-card{margin-top:12px}
+@media(max-width:600px){
+  .ribbon-tabs-wrap{margin:10px 0 9px}
+  .ribbon-tab{height:32px;padding:0 10px;font-size:8px}
+  .ribbon-tab-add{height:32px;width:32px;flex-basis:32px}
+  .add-ribbon-main{min-height:38px;font-size:9px}
+  .order-item{padding:9px 10px}
+  .order-item-title b{font-size:9px}
+  .order-item-title span{font-size:7px}
+  .order-item-price b{font-size:9.5px}
+}
+
+
+/* Multi-ribbon tabs: clearer add action + quick remove */
+.ribbon-tab{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.ribbon-tab-close{
+  display:inline-grid;
+  place-items:center;
+  width:16px;
+  height:16px;
+  margin-right:-4px;
+  border:0;
+  border-radius:50%;
+  background:#f2efea;
+  color:#6f6962;
+  font-size:11px;
+  line-height:1;
+  font-weight:700;
+  cursor:pointer;
+}
+.ribbon-tab-close:hover{
+  background:#e9e4dc;
+  color:#222;
+}
+.ribbon-tab-add{
+  flex:0 0 auto;
+  width:auto;
+  min-width:88px;
+  padding:0 11px;
+  font-size:8px;
+}
+@media(max-width:600px){
+  .ribbon-tab-close{
+    width:15px;
+    height:15px;
+    font-size:10px;
+  }
+  .ribbon-tab-add{
+    width:auto;
+    min-width:82px;
+    padding:0 9px;
+    font-size:7.5px;
+  }
+}
+
+
+/* Multi-ribbon tabs: wrap onto new rows instead of horizontal scrolling */
+.ribbon-tabs-wrap{
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.ribbon-tabs{
+  flex:1 1 100%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  overflow:visible;
+}
+.ribbon-tab,
+.ribbon-tab-add{
+  flex:0 0 auto;
+}
+.ribbon-tab-add{
+  order:2;
+}
+@media(max-width:600px){
+  .ribbon-tabs-wrap{gap:7px}
+  .ribbon-tabs{
+    flex-basis:100%;
+    gap:7px;
+  }
+}
+
+
+/* Order item quick quantity control */
+.order-item-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:8px;
+}
+.order-item-qty{
+  display:inline-grid;
+  grid-template-columns:25px auto 25px;
+  align-items:center;
+  gap:5px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:3px;
+  background:#fff;
+}
+.order-item-qty button{
+  width:25px;
+  height:24px;
+  padding:0;
+  border:0;
+  border-radius:6px;
+  background:#f3f0eb;
+  color:#222;
+  font-size:13px;
+  line-height:1;
+  cursor:pointer;
+}
+.order-item-qty span{
+  min-width:46px;
+  text-align:center;
+  font-size:8px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.order-item-bottom .order-item-actions{
+  margin-top:0;
+}
+@media(max-width:600px){
+  .order-item-bottom{
+    gap:7px;
+  }
+  .order-item-qty{
+    grid-template-columns:23px auto 23px;
+    gap:4px;
+  }
+  .order-item-qty button{
+    width:23px;
+    height:22px;
+    font-size:12px;
+  }
+  .order-item-qty span{
+    min-width:42px;
+    font-size:7.5px;
+  }
+}
+
+
+/* Top "Add ribbon" button: ~15% larger than the pre-mistake version */
+.ribbon-tab-add{
+  min-width:101px;
+  height:39px;
+  padding:0 13px;
+  font-size:9.2px;
+}
+@media(max-width:600px){
+  .ribbon-tab-add{
+    min-width:94px;
+    height:37px;
+    padding:0 10px;
+    font-size:8.6px;
+  }
+}
+
+
+/* Main "add another ribbon" CTA: more visible, text ~15% smaller */
+.add-ribbon-main{
+  border:1px solid #d8c7aa;
+  background:#f4ede2;
+  color:#1d1b18;
+  box-shadow:0 2px 8px rgba(75,60,40,.06);
+  font-size:8.5px;
+  font-weight:700;
+}
+.add-ribbon-main:hover{
+  background:#efe4d4;
+  border-color:#cdb48d;
+}
+@media(max-width:600px){
+  .add-ribbon-main{
+    font-size:7.7px;
+  }
+}
+
+
+/* Main add-ribbon CTA: keep button styling, enlarge label ~35% */
+.add-ribbon-main{
+  font-size:11.5px;
+}
+@media(max-width:600px){
+  .add-ribbon-main{
+    font-size:10.4px;
+  }
+}
+
+
+/* Top ribbon controls: +10%, subtle emphasis, natural wrapping */
+.ribbon-tabs-wrap{
+  display:block;
+}
+.ribbon-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  overflow:visible;
+}
+.ribbon-tab{
+  height:37px;
+  padding:0 13px;
+  font-size:9.9px;
+  border-color:#ded7ce;
+  box-shadow:0 1px 4px rgba(60,50,40,.035);
+}
+.ribbon-tab.active{
+  border-color:#222;
+  box-shadow:inset 0 0 0 1px #222,0 1px 4px rgba(60,50,40,.04);
+}
+.ribbon-tab-add{
+  order:initial;
+  min-width:111px;
+  height:43px;
+  padding:0 14px;
+  font-size:10.1px;
+  background:#f7f2ea;
+  border-color:#d8c7aa;
+  box-shadow:0 1px 5px rgba(75,60,40,.05);
+}
+@media(max-width:600px){
+  .ribbon-tabs{
+    gap:8px;
+  }
+  .ribbon-tab{
+    height:35px;
+    padding:0 11px;
+    font-size:8.8px;
+  }
+  .ribbon-tab-add{
+    min-width:103px;
+    height:41px;
+    padding:0 11px;
+    font-size:9.5px;
+  }
+}
+
+
+/* ===== Optional online logo visualization block ===== */
+.logo-panel{position:relative}
+.optional-badge{display:inline-block;margin-left:6px;padding:3px 6px;border-radius:999px;background:#f2eee8;color:#8a8178;font-size:6.5px;font-weight:700;vertical-align:middle}
+.logo-intro{margin-top:3px;display:flex;flex-direction:column;gap:3px}
+.logo-intro b{font-size:11px;line-height:1.2}
+.logo-intro span{color:var(--muted);font-size:8px;line-height:1.3}
+.logo-upload{margin-top:10px;min-height:66px;padding:10px 11px;border:1px dashed #d5c8b7;border-radius:11px;background:#faf7f2;display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:9px;align-items:center}
+.logo-upload-icon{width:32px;height:32px;border-radius:9px;background:#efe5d6;display:grid;place-items:center;font-size:17px}
+.logo-upload-copy b{display:block;font-size:9.5px}
+.logo-upload-copy span{display:block;margin-top:3px;color:var(--muted);font-size:7px;line-height:1.25}
+.logo-upload-btn{min-height:30px;padding:0 10px;border:1px solid #d1c0a5;border-radius:8px;background:#f2e8da;color:#1d1b18;font-size:8px;font-weight:700;cursor:pointer}
+.logo-loaded{margin-top:10px;padding:9px 10px;border:1px solid var(--line);border-radius:11px;background:#fbfaf8;display:grid;grid-template-columns:46px minmax(0,1fr);gap:9px;align-items:center}
+.logo-preview{width:46px;height:46px;border:1px solid #e2ddd6;border-radius:9px;background:#fff;overflow:hidden;display:grid;place-items:center;color:#9a948d;font-size:7px}
+.logo-preview img{width:100%;height:100%;object-fit:contain}
+.logo-file-info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px}
+.logo-file-info span{display:block;margin-top:3px;color:#258433;font-size:7px;line-height:1.2}
+.logo-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.logo-actions button{min-height:27px;padding:0 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:#4d4944;font-size:7px;font-weight:700;cursor:pointer}
+.logo-actions button.primary{background:#f4ede2;border-color:#d8c7aa;color:#1d1b18}
+.logo-actions button.danger{color:#9b5757}
+.logo-note{margin-top:7px;color:var(--muted);font-size:7px;line-height:1.35}
+.order-logo-status{display:block;margin-top:3px;font-size:6.8px;line-height:1.2}
+.order-logo-status.ready{color:#258433}
+.order-logo-status.empty{color:#948d85}
+@media(max-width:600px){
+  .logo-intro b{font-size:10px}.logo-intro span{font-size:7.5px}
+  .logo-upload{grid-template-columns:30px minmax(0,1fr);gap:8px}
+  .logo-upload-icon{width:30px;height:30px}
+  .logo-upload-btn{grid-column:1/-1;width:100%;min-height:29px}
+  .logo-loaded{grid-template-columns:42px minmax(0,1fr)}
+  .logo-preview{width:42px;height:42px}
+  .logo-note{font-size:6.7px}
+}
+
+
+/* Print compatibility: "Однотонні Стандарт" only on light ribbons */
+.print.disabled,
+.catitem.print-disabled{
+  opacity:.34;
+  filter:grayscale(.25);
+  cursor:not-allowed;
+}
+.print.disabled{pointer-events:none}
+.catitem.print-disabled{background:#f7f6f4}
+.catitem.print-disabled::after{
+  content:"тільки світлі";
+  margin-left:auto;
+  color:#9b958e;
+  font-size:6px;
+  white-space:nowrap;
+}
+.print-limit-hint{margin-top:6px;font-size:7px}
+.print-group-note{margin:-3px 0 8px;color:#8a837b;font-size:7px;line-height:1.3}
+@media(max-width:600px){
+  .catitem.print-disabled::after{font-size:5.5px}
+  .print-limit-hint{font-size:6.7px}
+}
+
+/* Conversion additions */
+.config-progress{margin:0 0 10px;padding:9px 10px;border:1px solid #ebe5dd;border-radius:11px;background:#fcfbf9}.config-progress-head{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:8px}.config-progress-head span{color:#6f6962;font-size:7px}.progress-track{height:4px;margin:7px 0 5px;border-radius:99px;background:#ece8e2;overflow:hidden}.progress-track span{display:block;height:100%;width:80%;border-radius:inherit;background:#25221f;transition:width .2s}.progress-steps{display:flex;justify-content:space-between;color:#999189;font-size:5.8px}.conversion-tools{display:grid;gap:8px;margin:10px 0}.config-ok{padding:9px 11px;border:1px solid #cfe2cf;border-radius:9px;background:#f2f8f1;color:#287334;font-size:8px;font-weight:700}.delivery-estimate{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 11px;border:1px solid var(--line);border-radius:9px;background:#fbfaf8}.delivery-estimate span{display:block;color:#817a72;font-size:6.8px}.delivery-estimate b{display:block;margin-top:2px;font-size:10px}.delivery-estimate small{max-width:48%;text-align:right;color:#817a72;font-size:6.4px;line-height:1.25}.save-share-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}.save-share-row button,.help-choice{min-height:35px;border:1px solid #d9d1c8;border-radius:9px;background:#fff;color:#302d29;font-size:7.4px;font-weight:700;cursor:pointer}.save-share-row button:first-child{background:#f7f2ea;border-color:#d8c7aa}.help-choice{width:100%;background:transparent;color:#6f6860}.autosave-status{text-align:center;color:#8a837b;font-size:6.4px}.order-item-actions .duplicate-item{background:#f7f2ea;border-color:#d8c7aa}.mini-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:18px;background:rgba(25,23,21,.42)}.mini-modal.open{display:grid}.mini-modal-card{position:relative;width:min(420px,100%);padding:20px;border-radius:15px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.18)}.mini-modal-card h3{margin:0 28px 6px 0;font-family:"Libre Caslon Display",serif;font-size:22px}.mini-modal-card p{margin:0 0 13px;color:#777069;font-size:10px;line-height:1.4}.mini-modal-card input{width:100%;height:42px;box-sizing:border-box;padding:0 11px;border:1px solid #d9d3cc;border-radius:9px;font:inherit;font-size:10px}.mini-modal-main{width:100%;height:40px;margin-top:8px;border:0;border-radius:9px;background:#222;color:#fff;font-size:9px;font-weight:700}.mini-modal-close{position:absolute;right:12px;top:10px;border:0;background:none;font-size:22px;cursor:pointer}.toast{position:fixed;left:50%;bottom:82px;z-index:1200;transform:translate(-50%,15px);opacity:0;pointer-events:none;padding:9px 12px;border-radius:9px;background:#222;color:#fff;font-size:8px;transition:.2s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:600px){.save-share-row{grid-template-columns:1fr}.delivery-estimate{align-items:flex-start}.mobilebar div span{font-size:7px}}.delete-confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.delete-confirm-actions button{height:39px;border-radius:9px;font-size:9px;font-weight:700;cursor:pointer}.delete-confirm-actions #cancelDelete{border:1px solid #d9d3cc;background:#fff;color:#302d29}.delete-confirm-actions #confirmDelete{border:1px solid #b86b6b;background:#a84f4f;color:#fff}.delete-confirm-card p{margin-bottom:0}.tier-upsell{margin-top:8px;padding:9px 10px;border:1px solid #dfcfb5;border-radius:9px;background:#faf5ed;display:flex;align-items:center;justify-content:space-between;gap:10px}.tier-upsell.hidden{display:none}.tier-upsell b{display:block;font-size:8.5px}.tier-upsell span{display:block;margin-top:2px;color:#746d65;font-size:6.8px;line-height:1.25}.tier-upsell button{min-width:66px;height:29px;border:1px solid #d3bd98;border-radius:7px;background:#f0e3d0;font-size:7px;font-weight:700;cursor:pointer}.compare-trigger{margin-top:7px;padding:0;border:0;background:none;color:#625b53;text-decoration:underline;text-underline-offset:3px;font-size:7px;font-weight:700;cursor:pointer}.tier-compare{margin-top:8px;padding:9px;border:1px solid var(--line);border-radius:9px;background:#fff}.tier-compare.hidden{display:none}.tier-compare-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.tier-compare-head b{font-size:8px}.tier-compare-head button{border:0;background:none;font-size:15px;cursor:pointer}.tier-compare-row{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:5px;padding:6px 4px;border-top:1px solid #eee9e3;font-size:6.8px}.tier-compare-row.head{color:#8a837b;font-size:6px}.tier-compare-row.current{margin:0 -3px;padding-left:7px;padding-right:7px;border-radius:6px;background:#f7f1e8;font-weight:700}.tier-compare-row button{border:0;background:none;padding:0;text-align:left;font:inherit;font-weight:inherit;cursor:pointer}.tier-compare-saving{margin-top:6px;color:#27813a;font-size:6.7px;font-weight:700}@media(max-width:600px){.tier-upsell b{font-size:8px}.tier-upsell span{font-size:6.5px}.tier-compare-row{font-size:6.5px}}.add-ribbon-upsell{display:grid;gap:5px}.add-ribbon-helper{text-align:center;color:#8a837b;font-size:6.5px;line-height:1.3}.add-ribbon-upsell .add-ribbon-main{margin:0}@media(max-width:600px){.add-ribbon-helper{font-size:6.2px}}
+#galleryHint{display:none!important;}
+
+max-width:calc(100% - 32px)!important;
+}
+.gallery-overlay:has(#galleryLabel),
+.gallery-caption:has(#galleryLabel),
+.gallery-info:has(#galleryLabel),
+.gallery-meta:has(#galleryLabel){
+  width:max-content!important;
+  max-width:calc(100% - 32px)!important;
+  min-width:0!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+}
+@media(max-width:600px){
+  .gallery-overlay:has(#galleryLabel),
+  .gallery-caption:has(#galleryLabel),
+  .gallery-info:has(#galleryLabel),
+  .gallery-meta:has(#galleryLabel){
+    max-width:calc(100% - 20px)!important;
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+}
+
+
+/* Configuration pill follows the selected ribbon + print text */
+.visual .overlay{
+  width:max-content!important;
+  max-width:calc(100% - 40px)!important;
+  min-width:0!important;
+  right:auto!important;
+  padding:14px 20px!important;
+  gap:0!important;
+}
+.visual .overlay > div:first-child{
+  width:auto!important;
+  min-width:0!important;
+  white-space:nowrap;
+}
+#visMeta{
+  white-space:nowrap;
+}
+@media(max-width:600px){
+  .visual .overlay{
+    max-width:calc(100% - 24px)!important;
+    padding:11px 15px!important;
+  }
+  .visual .overlay > div:first-child,
+  #visMeta{
+    white-space:normal;
+  }
+}
+
+
+/* Compact centered configuration pill */
+.visual .overlay{
+  padding:10px 18px!important;
+  align-items:center!important;
+  line-height:1.25!important;
+}
+.visual .overlay > div:first-child,
+#visMeta{
+  margin:0!important;
+  padding:0!important;
+  line-height:1.25!important;
+}
+@media(max-width:600px){
+  .visual .overlay{
+    padding:9px 14px!important;
+  }
+}
+
+
+/* Approved mockup thumbnails */
+#galleryThumbs .thumb img{
+  display:block!important;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:inherit;
+}
+</style>
+<!-- CLEAN NEW 2: old prebuilt excluded; fresh scene set only -->
+</head>
+<body>
+<header><div class="header"><div class="logo">ArtMone<small>BRAND</small></div><button class="topbtn" id="scrollCalc">Розрахувати</button></div></header>
+<main class="main">
+<section>
+
+<div class="visual photo-gallery">
+  <div class="badge">★ ХІТ ПРОДАЖІВ</div>
+  <div id="mockupPlaceholder" class="gallery-media" aria-label="Місце для майбутнього мокапа"></div>
+  <img id="mockupMain" class="gallery-media" src="assets/mockups/am-567/01-bouquet.webp" alt="Мокап стрічки" style="display:none">
+  <img id="warehouseMain" class="gallery-media" src="assets/warehouse/am-567.webp" alt="Реальне фото стрічки зі складу" style="display:none">
+  <div class="overlay">
+    <div><span id="visMeta"></span></div>
+    <div id="galleryHint">Готова візуалізація вибраної комбінації</div>
+  </div>
+</div>
+<div class="thumbs" id="galleryThumbs">
+  <button class="thumb active" data-scene="bouquet" title="Букет"><img src="assets/mockups/am-567/01-bouquet.webp" alt="Букет"></button>
+  <button class="thumb" data-scene="sweets" title="Кондитерське пакування"><img src="assets/mockups/am-567/06-confectionery.webp" alt="Кондитерське пакування"></button>
+  <button class="thumb" data-scene="gift" title="Подарункове пакування"><img src="assets/mockups/am-567/04-gift.webp" alt="Подарунок"></button>
+  <button class="thumb" data-scene="beauty" title="Beauty / Jewellery"><img src="assets/mockups/am-567/05-beauty-jewelry.webp" alt="Beauty"></button>
+  <button class="thumb" data-scene="roll" title="Бобіна та розгорнута стрічка"><img src="assets/mockups/am-567/02-roll.webp" alt="Бобіна"></button>
+  <button class="thumb" data-scene="macro" title="Макро друку"><img src="assets/mockups/am-567/03-macro.webp" alt="Макро"></button>
+  <button class="thumb" data-scene="stock" title="Багато бобін"><img src="assets/mockups/am-567/07-many-rolls.webp" alt="Багато бобін"></button>
+  <button class="thumb" data-scene="warehouse" title="Реальне фото зі складу"><img src="assets/warehouse/am-567.webp" id="warehouseThumb" alt="Фото зі складу"></button>
+</div>
+<div class="features"><div class="feat"><b>🧵 Від 100 метрів</b>мінімальне замовлення</div><div class="feat"><b>✎ Безкоштовний дизайн</b>макета</div><div class="feat term-feature"><b>◷ Термін</b><span><strong>Терміново</strong> 1–2 дні</span><span><strong>Стандарт</strong> 4–6 днів</span></div><div class="feat"><b>▣ Доставка</b>Україна та за кордон</div></div>
+</section>
+<section id="config"><h1>Сатинова стрічка<br>з вашим логотипом</h1><div class="subtitle">Власне виробництво</div>
+<div class="config-progress"><div class="config-progress-head"><b id="progressLabel">Налаштування стрічки</b><span id="progressPercent">80% готово</span></div><div class="progress-track"><span id="progressFill"></span></div><div class="progress-steps"><span>Стрічка</span><span>Друк</span><span>Кількість</span><span>Логотип</span><span>Готово</span></div></div><div class="ribbon-tabs-wrap"><div class="ribbon-tabs" id="ribbonTabs"><button class="ribbon-tab-add" id="addRibbonTop" type="button">＋ Додати стрічку</button></div></div>
+<div class="config-grid">
+<div class="panel"><div class="phead"><div><span class="step">1</span>Колір стрічки</div><button class="link" id="allColors">Всі кольори</button></div><div class="current"><div class="current-dot"></div><div><b id="colorName"></b><span id="colorCode"></span></div></div><div class="swatches" id="swatches"></div></div>
+<div class="panel"><div class="phead"><div><span class="step">2</span>Висота стрічки</div></div><div class="widths" id="widths"></div><div class="hint">ⓘ Недоступні висоти стрічки автоматично блокуються.</div></div>
+<div class="panel"><div class="phead"><div><span class="step">3</span>Колір друку</div><button class="link" id="allPrints">Всі кольори</button></div><div class="prints" id="prints"></div><div class="note">★ Чорний друк входить у вартість. Інший колір +4 грн за 1 метр.</div><div class="hint print-limit-hint">ⓘ Палітра «Однотонні Стандарт» доступна лише для світлих відтінків стрічки.</div></div>
+<div class="panel"><div class="phead"><div><span class="step">4</span>Метраж стрічки</div></div><div class="qtygrid" id="qtygrid"></div><div class="qtycustom"><button id="minus">−</button><input id="qtyInput" value="100"><button id="plus">+</button></div><div class="hint" id="tierHint"></div>
+<div class="tier-upsell hidden" id="tierUpsell"><div><b id="tierUpsellTitle"></b><span id="tierUpsellText"></span></div><button type="button" id="jumpNextTier">Обрати</button></div>
+<button type="button" class="compare-trigger" id="compareTiers">Порівняти тиражі</button>
+<div class="tier-compare hidden" id="tierCompare"><div class="tier-compare-head"><b>Порівняння тиражів</b><button type="button" id="closeTierCompare">×</button></div><div id="tierCompareRows"></div></div></div>
+<div class="panel full"><div class="phead"><div><span class="step">5</span>Термін виготовлення</div></div><div class="terms"><button class="term active" data-u="0"><b><span class="radio"></span>Стандарт</b><br>4–6 робочих днів</button><button class="term" data-u="1"><b><span class="radio"></span>Терміново</b><br>1–2 робочі дні<br><span class="red">+20% до вартості</span></button></div><div class="hint term-workdays-hint">ⓘ Робочі дні: понеділок–п’ятниця. Субота та неділя не враховуються у термін виготовлення.</div></div>
+</div>
+<div class="panel full logo-panel">
+  <div class="phead"><div><span class="step">6</span>Ваш логотип <span class="optional-badge">за бажанням</span></div></div>
+  <div class="logo-intro">
+    <b>Побачте свій логотип на стрічці онлайн</b>
+    <span>Безкоштовна візуалізація прямо в конфігураторі</span>
+  </div>
+  <div class="logo-upload" id="logoUploadState">
+    <div class="logo-upload-icon">＋</div>
+    <div class="logo-upload-copy"><b>Завантажити логотип</b><span>PNG, JPG, SVG або PDF · прозорий, білий, чорний чи однотонний фон</span></div>
+    <button type="button" class="logo-upload-btn" id="uploadSharedLogo">Обрати файл</button>
+  </div>
+  <div class="logo-loaded hidden" id="logoLoadedState">
+    <div class="logo-preview" id="logoPreview"><span>LOGO</span></div>
+    <div class="logo-file-info"><b id="logoFileName"></b><span id="logoModeText"></span></div>
+    <div class="logo-actions" id="logoActions"></div>
+  </div>
+  <div class="logo-note">ⓘ Для PNG, JPG та SVG однотонний фон прибирається автоматично для онлайн-візуалізації. Оригінальний файл зберігається для макета.</div>
+  <input type="file" id="sharedLogoInput" accept=".png,.jpg,.jpeg,.svg,.pdf,image/png,image/jpeg,image/svg+xml,application/pdf" hidden>
+  <input type="file" id="customLogoInput" accept=".png,.jpg,.jpeg,.svg,.pdf,image/png,image/jpeg,image/svg+xml,application/pdf" hidden>
+</div>
+<div class="conversion-tools"><div class="config-ok" id="configOk">✓ Конфігурація доступна до виготовлення</div><div class="add-ribbon-upsell"><button class="add-ribbon-main" id="addRibbonMain" type="button">＋ Додати ще одну стрічку до замовлення</button><div class="add-ribbon-helper">Кожну стрічку можна налаштувати окремо: колір, висоту, друк і метраж.</div></div><div class="delivery-estimate"><div><span>Орієнтовна відправка</span><b id="dispatchDate"></b></div><small id="dispatchNote"></small></div><div class="save-share-row"><button type="button" id="shareConfig">↗ Поділитися конфігурацією</button><button type="button" id="saveQuote">♡ Надіслати прорахунок собі</button></div><button type="button" class="help-choice" id="needHelp">Потрібна допомога з вибором?</button><div class="autosave-status" id="autosaveStatus">✓ Конфігурація зберігається автоматично</div></div>
+<div class="summary">
+<h2>Ваше замовлення</h2>
+<div class="order-items" id="orderItems"></div>
+<div class="order-meta"><div class="row"><span>Загальний метраж</span><b id="orderQty"></b></div><div class="row design-row"><span>Дизайн макетів</span><b>Безкоштовно</b></div></div>
+<div class="price-card">
+  <div class="regular-price hidden" id="regularPriceWrap"><span>Звичайна ціна</span><del id="regularTotal"></del></div>
+  <strong class="current-total" id="total"></strong>
+  <div class="wholesale-benefit hidden" id="wholesaleBenefit">◉ <b>Ваша економія: <span id="benefitMoney"></span> (<span id="benefitPercent"></span>)</b></div>
+</div>
+<button class="order">ЗАМОВИТИ</button>
+</div>
+</section></main>
+<section class="lower"><div class="lower-card"><h2>Чому обирають наші стрічки</h2><div class="why"><div class="why-item"><div class="why-icon">◇</div><b>Преміальна якість</b>щільний сатин, рівні краї, яскраві кольори</div><div class="why-item"><div class="why-icon">◉</div><b>34 кольори друку</b>стійкий та насичений друк</div><div class="why-item"><div class="why-icon">✦</div><b>Ваш бренд на першому плані</b>пакування, яке підкреслює цінність ваших товарів</div><div class="why-item"><div class="why-icon">▣</div><b>Ідеально для брендування</b>пакування та подарунків</div></div></div><div class="lower-card"><h2>Відгуки наших клієнтів</h2><div class="reviews" id="dynamicReviews"></div></div></section>
+<section class="faq-contact"><div class="lower-card"><h2>Часті запитання</h2>
+<details><summary>Чи побачу я макет перед друком?</summary><p>Так. Після оформлення замовлення дизайнер підготує макет для погодження перед запуском у друк.</p></details>
+<details><summary>Чи можна замовити від 100 метрів?</summary><p>Так, мінімальне замовлення однієї позиції — від 100 метрів.</p></details>
+<details><summary>Що робити, якщо не знаю, який колір друку вибрати?</summary><p>Скористайтеся доступними комбінаціями в конфігураторі або зверніться до менеджера — допоможемо підібрати варіант.</p></details>
+<details><summary>Коли відправите замовлення?</summary><p>Стандартне виготовлення — до 6 робочих днів, термінове — до 2 робочих днів. Субота та неділя не враховуються.</p></details>
+</div><div class="lower-card contact"><h2>Не знайшли потрібний колір або розмір?</h2><p>Напишіть нам, і ми допоможемо підібрати рішення для вашого бренду.</p><button class="order">ЗВ’ЯЗАТИСЬ З МЕНЕДЖЕРОМ</button></div></section>
+<div class="mini-modal" id="deleteModal"><div class="mini-modal-card delete-confirm-card"><button class="mini-modal-close" id="closeDeleteModal">×</button><h3>Видалити стрічку?</h3><p id="deleteConfirmText">Цю позицію буде видалено із замовлення.</p><div class="delete-confirm-actions"><button type="button" id="cancelDelete">Скасувати</button><button type="button" id="confirmDelete">Видалити</button></div></div></div><div class="mini-modal" id="quoteModal"><div class="mini-modal-card"><button class="mini-modal-close" id="closeQuoteModal">×</button><h3>Надіслати прорахунок собі</h3><p>Збережемо контакт разом із поточною конфігурацією. Відправлення підключимо до фінальної форми замовлення.</p><input id="quoteContact" type="text" placeholder="Телефон, email або Instagram"><button class="mini-modal-main" id="quoteSubmit">Зберегти прорахунок</button></div></div><div class="toast" id="siteToast"></div><div class="catalog" id="catalog"><div class="cathead"><b>Каталог кольорів</b><button id="closeCat">×</button></div><div class="groups" id="groups"></div></div>
+<div class="catalog" id="printCatalog"><div class="cathead"><b>Кольори друку</b><button id="closePrintCat">×</button></div><div class="groups" id="printGroups"></div></div>
+<div class="mobilebar"><div><span id="mobileMeta">100 м · 1 стрічка</span><b id="mobileTotal"></b></div><button id="mobileOrder">ЗАМОВИТИ</button></div>
+<script>
+const ribbons=[{"group": "Світлі / молочні / металеві", "name": "Сталевий сутінок", "code": "AM 8", "hex": "#4a4b47", "widths": [20]}, {"group": "Світлі / молочні / металеві", "name": "Сталевий графіт", "code": "AM 18", "hex": "#373838", "widths": [15, 20, 25, 30]}, {"group": "Світлі / молочні / металеві", "name": "Графітова ніч", "code": "AM 21", "hex": "#282932", "widths": [25]}, {"group": "Світлі / молочні / металеві", "name": "Холодний хром", "code": "AM 017", "hex": "#6a6961", "widths": [25]}, {"group": "Світлі / молочні / металеві", "name": "Срібний лід", "code": "AM 11", "hex": "#aeb8b4", "widths": [20, 25]}, {"group": "Світлі / молочні / металеві", "name": "Срібний баланс", "code": "AM 6", "hex": "#9ca7ac", "widths": [25]}, {"group": "Світлі / молочні / металеві", "name": "Срібний спокій", "code": "AM Silver", "hex": "#e6e7df", "widths": [15, 20, 25]}, {"group": "Світлі / молочні / металеві", "name": "Платиновий сатин", "code": "AM 009", "hex": "#8a928a", "widths": [15, 30]}, {"group": "Світлі / молочні / металеві", "name": "Світле золото", "code": "AM 10", "hex": "#c79c13", "widths": [25]}, {"group": "Світлі / молочні / металеві", "name": "Шампань витриманий", "code": "AM 824", "hex": "#b29335", "widths": [25]}, {"group": "Світлі / молочні / металеві", "name": "Молочний крем", "code": "AM 810", "hex": "#e6dbc0", "widths": [10, 15, 20, 25]}, {"group": "Червоні / винні / бордо", "name": "Марсала вишня", "code": "AM 20", "hex": "#5b1c27", "widths": [25]}, {"group": "Червоні / винні / бордо", "name": "Бургунді глибокий", "code": "AM 23", "hex": "#3c1821", "widths": [20]}, {"group": "Червоні / винні / бордо", "name": "Червоний рубін", "code": "AM 250", "hex": "#b61c1e", "widths": [10, 15, 20, 25]}, {"group": "Червоні / винні / бордо", "name": "Червоний оксамит", "code": "AM 252", "hex": "#c12124", "widths": [10, 15, 20, 25]}, {"group": "Червоні / винні / бордо", "name": "Гранатовий оксамит", "code": "AM 1", "hex": "#7d2028", "widths": [20]}, {"group": "Червоні / винні / бордо", "name": "Гранатова глибина", "code": "AM WindRed", "hex": "#621b28", "widths": [10, 15, 20, 25, 30]}, {"group": "Червоні / винні / бордо", "name": "Вишневий шепіт", "code": "AM 4", "hex": "#8d2b46", "widths": [25]}, {"group": "Червоні / винні / бордо", "name": "Мандариновий імпульс", "code": "AM 751", "hex": "#e96800", "widths": [10, 25]}, {"group": "Сині / сапфірові / океанські", "name": "Сапфірова ніч", "code": "AM 22", "hex": "#112a5b", "widths": [15, 25]}, {"group": "Сині / сапфірові / океанські", "name": "Блакитний небесний", "code": "AM 305", "hex": "#64b9d1", "widths": [25, 30]}, {"group": "Сині / сапфірові / океанські", "name": "Блакитний повітряний", "code": "AM 307", "hex": "#718dc5", "widths": [15, 20, 25]}, {"group": "Сині / сапфірові / океанські", "name": "Синій класичний", "code": "AM 363", "hex": "#17346d", "widths": [25]}, {"group": "Сині / сапфірові / океанські", "name": "Синя рівновага", "code": "AM 16", "hex": "#112f5a", "widths": [20, 25, 30]}, {"group": "Сині / сапфірові / океанські", "name": "Синій нічний", "code": "AM 370", "hex": "#111c42", "widths": [10, 15, 20, 25]}, {"group": "Сині / сапфірові / океанські", "name": "Синій сапфір", "code": "AM 352", "hex": "#0e46a6", "widths": [20, 25]}, {"group": "Коричневі / теплі приглушені", "name": "Тауп елегантний", "code": "AM 12", "hex": "#5e524d", "widths": [15, 20, 25]}, {"group": "Коричневі / теплі приглушені", "name": "Тепла латунь", "code": "AM 15", "hex": "#947a07", "widths": [20]}, {"group": "Коричневі / теплі приглушені", "name": "Золото витримане", "code": "AM 14", "hex": "#b17808", "widths": [20, 25]}, {"group": "Коричневі / теплі приглушені", "name": "Золотий престиж", "code": "AM 5", "hex": "#b3830a", "widths": [25]}, {"group": "Коричневі / теплі приглушені", "name": "Бронзовий тауп", "code": "AM 814", "hex": "#6b5547", "widths": [10, 15, 20, 25, 40]}, {"group": "Коричневі / теплі приглушені", "name": "Нюдовий баланс", "code": "AM 714", "hex": "#dda985", "widths": [10, 15, 20, 25]}, {"group": "Коричневі / теплі приглушені", "name": "Кремовий мокко", "code": "AM 847", "hex": "#8b6842", "widths": [25]}, {"group": "Коричневі / теплі приглушені", "name": "Коричневий глибокий", "code": "AM 850", "hex": "#3a271d", "widths": [15, 20, 25]}, {"group": "Зелені", "name": "Смарагдовий графіт", "code": "AM 17", "hex": "#173f35", "widths": [25]}, {"group": "Зелені", "name": "М’ятний шовковий", "code": "AM 513", "hex": "#70b49d", "widths": [10, 15, 20, 25, 30]}, {"group": "Зелені", "name": "Салатовий ніжний", "code": "AM 530", "hex": "#5ba85d", "widths": [15, 20, 25]}, {"group": "Зелені", "name": "Оливковий спокій", "code": "AM 567", "hex": "#788454", "widths": [10, 15, 20, 25]}, {"group": "Зелені", "name": "Морський оксамит", "code": "AM 369", "hex": "#103a47", "widths": [30]}, {"group": "Лаванда / фіолет / аметист", "name": "Лавандовий шепіт", "code": "AM 420", "hex": "#8a85b8", "widths": [25, 30]}, {"group": "Лаванда / фіолет / аметист", "name": "Королівський фіолет", "code": "AM 465", "hex": "#45205e", "widths": [15, 20]}, {"group": "Лаванда / фіолет / аметист", "name": "Сливовий сатин", "code": "AM 473", "hex": "#52285a", "widths": [25]}, {"group": "Лаванда / фіолет / аметист", "name": "Чорний класичний", "code": "AM 030", "hex": "#111111", "widths": [10, 15, 20, 25, 30]}, {"group": "Рожеві / пудрові", "name": "Рожева пудра", "code": "AM 155", "hex": "#e14589", "widths": [15, 20]}, {"group": "Рожеві / пудрові", "name": "Пудрова мальва", "code": "AM 150", "hex": "#b76780", "widths": [25]}, {"group": "Рожеві / пудрові", "name": "Рожевий шовк", "code": "AM 154", "hex": "#d57996", "widths": [10, 15, 20, 25]}, {"group": "Рожеві / пудрові", "name": "Пудрова вуаль", "code": "AM 117", "hex": "#d9a4b2", "widths": [10, 15, 20, 25]}];
+const prints=[{"name": "Чорний", "hex": "#171717", "extra": 0, "kind": "standard"}, {"name": "Золото", "hex": "#d5ad48", "extra": 4, "kind": "metallic"}, {"name": "Срібло", "hex": "#d8d8d8", "extra": 4, "kind": "metallic"}, {"name": "Білий", "hex": "#ffffff", "extra": 4, "kind": "standard"}, {"name": "Фламінго", "hex": "#d98b9c", "extra": 4, "kind": "metallic"}, {"name": "Бурштин", "hex": "#e69d62", "extra": 4, "kind": "metallic"}, {"name": "Півонія", "hex": "#bb6455", "extra": 4, "kind": "metallic"}, {"name": "Червоний оксамит", "hex": "#a51616", "extra": 4, "kind": "metallic"}, {"name": "Зелений оксамит", "hex": "#0b9b3b", "extra": 4, "kind": "metallic"}, {"name": "Синій оксамит", "hex": "#192db4", "extra": 4, "kind": "metallic"}, {"name": "Рожево-ліловий", "hex": "#df76a8", "extra": 4, "kind": "standard"}, {"name": "Зелено-трав’янистий", "hex": "#49b650", "extra": 4, "kind": "standard"}, {"name": "Червоно-кораловий", "hex": "#ff3c36", "extra": 4, "kind": "standard"}, {"name": "Синій небесний", "hex": "#48b5ef", "extra": 4, "kind": "standard"}, {"name": "Бежевий пісок", "hex": "#d8b66e", "extra": 4, "kind": "standard"}, {"name": "Фуксія", "hex": "#c81774", "extra": 4, "kind": "standard"}, {"name": "Рожево-фіолетовий", "hex": "#ca00d1", "extra": 4, "kind": "standard"}, {"name": "Фіолетовий", "hex": "#7743a4", "extra": 4, "kind": "standard"}, {"name": "Темно-фіолетовий", "hex": "#46265e", "extra": 4, "kind": "standard"}, {"name": "Коричневий", "hex": "#6c5044", "extra": 4, "kind": "standard"}, {"name": "Яскраво-червоний", "hex": "#ef171a", "extra": 4, "kind": "standard"}, {"name": "Світло-червоний", "hex": "#ef3344", "extra": 4, "kind": "standard"}, {"name": "Темно-червоний", "hex": "#a42121", "extra": 4, "kind": "standard"}, {"name": "Бордовий", "hex": "#972735", "extra": 4, "kind": "standard"}, {"name": "Теплий коричневий", "hex": "#9b6322", "extra": 4, "kind": "standard"}, {"name": "Оранжевий", "hex": "#f58312", "extra": 4, "kind": "standard"}, {"name": "Теплий жовтий", "hex": "#ffc345", "extra": 4, "kind": "standard"}, {"name": "Жовтий", "hex": "#ffd900", "extra": 4, "kind": "standard"}, {"name": "Лимон", "hex": "#ffe70a", "extra": 4, "kind": "standard"}, {"name": "Смарагдово-зелений", "hex": "#087d5f", "extra": 4, "kind": "standard"}, {"name": "М’ятний", "hex": "#61a95a", "extra": 4, "kind": "standard"}, {"name": "Темно-синій", "hex": "#28458d", "extra": 4, "kind": "standard"}, {"name": "Насичений синій", "hex": "#147bea", "extra": 4, "kind": "standard"}, {"name": "Сірий", "hex": "#c7c9c8", "extra": 4, "kind": "standard"}];
+const prices={"10": {"100": 12.8, "200": 10.3, "300": 9.47, "400": 9.05, "500": 8.8, "1000": 7.8, "2000": 7.3, "3000": 7.13, "4000": 7.05, "5000": 6.9, "10000": 6.3}, "15": {"100": 14.3, "200": 13.3, "300": 11.8, "400": 11.05, "500": 10.6, "1000": 10.0, "2000": 9.0, "3000": 8.47, "4000": 8.18, "5000": 8.0, "10000": 7.0}, "20": {"100": 16.45, "200": 14.45, "300": 12.78, "400": 12.08, "500": 11.45, "1000": 11.0, "2000": 10.0, "3000": 9.45, "4000": 9.25, "5000": 8.9, "10000": 8.0}, "25": {"100": 17.6, "200": 15.35, "300": 13.77, "400": 12.85, "500": 12.3, "1000": 11.8, "2000": 10.8, "3000": 10.3, "4000": 10.1, "5000": 9.9, "10000": 9.0}, "30": {"100": 18.65, "200": 15.9, "300": 14.32, "400": 13.4, "500": 12.85, "1000": 12.35, "2000": 11.35, "3000": 10.85, "4000": 10.65, "5000": 10.45, "10000": 9.55}};
+let colorIndex=ribbons.findIndex(r=>r.code==="AM 567");let width=20,printIndex=0,qty=100,urgent=false;
+let sharedLogo=null;
+let orderItems=[{colorIndex,width,printIndex,qty,urgent,logoMode:"none",customLogo:null}];
+let activeItemIndex=0;
+const MAX_RIBBONS=20;
+const CONFIG_STORAGE_KEY="artmone_satin_config_v1";let pendingDeleteIndex=null,saveTimer=null,restoringConfig=false;
+function serializableItem(item){return{colorIndex:item.colorIndex,width:item.width,printIndex:item.printIndex,qty:item.qty,urgent:item.urgent,logoMode:"none",customLogo:null}}
+function saveConfig(){if(restoringConfig)return;try{syncActiveItem();localStorage.setItem(CONFIG_STORAGE_KEY,JSON.stringify({items:orderItems.map(serializableItem),activeItemIndex,savedAt:Date.now()}));const s=$("#autosaveStatus");if(s)s.textContent="✓ Конфігурація збережена"}catch(e){}}
+function scheduleSave(){clearTimeout(saveTimer);saveTimer=setTimeout(saveConfig,120)}
+function restoreConfig(){try{const raw=localStorage.getItem(CONFIG_STORAGE_KEY);if(!raw)return false;const data=JSON.parse(raw);if(!data||!Array.isArray(data.items)||!data.items.length)return false;restoringConfig=true;orderItems=data.items.slice(0,MAX_RIBBONS).map(x=>({...x,logoMode:"none",customLogo:null}));activeItemIndex=Math.max(0,Math.min(data.activeItemIndex||0,orderItems.length-1));const item=orderItems[activeItemIndex];colorIndex=item.colorIndex;width=item.width;printIndex=item.printIndex;qty=item.qty;urgent=item.urgent;if(!isPrintAllowedForRibbon(printIndex,colorIndex)){printIndex=firstAllowedPrintIndex(colorIndex);item.printIndex=printIndex}$("#qtyInput").value=qty;restoringConfig=false;return true}catch(e){restoringConfig=false;return false}}
+function configPayload(){syncActiveItem();return orderItems.map(item=>({c:item.colorIndex,w:item.width,p:item.printIndex,q:item.qty,u:item.urgent?1:0}))}
+function encodeConfig(){return btoa(unescape(encodeURIComponent(JSON.stringify(configPayload()))))}
+function applySharedConfig(){try{const u=new URL(location.href),v=u.searchParams.get("cfg");if(!v)return false;const arr=JSON.parse(decodeURIComponent(escape(atob(v))));if(!Array.isArray(arr)||!arr.length)return false;orderItems=arr.slice(0,MAX_RIBBONS).map(x=>({colorIndex:x.c,width:x.w,printIndex:x.p,qty:Math.max(100,Math.min(10000,x.q||100)),urgent:!!x.u,logoMode:"none",customLogo:null}));activeItemIndex=0;const item=orderItems[0];colorIndex=item.colorIndex;width=item.width;printIndex=item.printIndex;qty=item.qty;urgent=item.urgent;if(!isPrintAllowedForRibbon(printIndex,colorIndex)){printIndex=firstAllowedPrintIndex(colorIndex);item.printIndex=printIndex}$("#qtyInput").value=qty;history.replaceState(null,"",location.pathname+location.hash);return true}catch(e){return false}}
+function showToast(text,undo){const t=$("#siteToast");if(!t)return;t.innerHTML="";const s=document.createElement("span");s.textContent=text;t.appendChild(s);if(undo){const b=document.createElement("button");b.textContent=" · Повернути";b.style.cssText="border:0;background:none;color:#fff;font:inherit;font-weight:700;cursor:pointer;padding:0";b.onclick=()=>{undo();t.classList.remove("show")};t.appendChild(b)}t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3200)}
+function duplicateRibbon(i){syncActiveItem();if(orderItems.length>=MAX_RIBBONS)return showToast("Максимум 20 стрічок");const src=orderItems[i];orderItems.splice(i+1,0,{...src,customLogo:src.customLogo});activeItemIndex=i+1;const item=orderItems[activeItemIndex];colorIndex=item.colorIndex;width=item.width;printIndex=item.printIndex;qty=item.qty;urgent=item.urgent;$("#qtyInput").value=qty;render();showToast("Стрічку продубльовано")}
+function addBusinessDays(date,days){const d=new Date(date);let added=0;while(added<days){d.setDate(d.getDate()+1);const wd=d.getDay();if(wd!==0&&wd!==6)added++}return d}
+function dispatchEstimate(){return addBusinessDays(new Date(),orderItems.some(x=>x.urgent)?2:6)}
+function formatDateUk(d){return d.toLocaleDateString("uk-UA",{day:"numeric",month:"long"})}
+function renderConversionTools(){const logo=!!activeLogo(),pct=logo?100:80;$("#progressPercent").textContent=pct+"% готово";$("#progressFill").style.width=pct+"%";$("#progressLabel").textContent=logo?"✓ Стрічка налаштована":"Налаштування стрічки";$("#configOk").textContent="✓ Конфігурація доступна до виготовлення";$("#dispatchDate").textContent="до "+formatDateUk(dispatchEstimate());$("#dispatchNote").textContent=(orderItems.some(x=>x.urgent)?"Термінове виготовлення 1–2 робочі дні":"Стандартне виготовлення до 6 робочих днів")+" · субота та неділя не враховуються";const tq=orderItems.reduce((a,x)=>a+x.qty,0);$("#mobileMeta").textContent=tq.toLocaleString("uk-UA")+" м · "+orderItems.length+" "+(orderItems.length===1?"стрічка":orderItems.length<5?"стрічки":"стрічок")}
+
+
+const STANDARD_PRINT_NAMES=new Set([
+  "Фуксія","Рожево-фіолетовий","Фіолетовий","Темно-фіолетовий","Коричневий",
+  "Яскраво-червоний","Світло-червоний","Темно-червоний","Бордовий",
+  "Теплий коричневий","Оранжевий","Теплий жовтий","Жовтий","Лимон",
+  "Смарагдово-зелений","М’ятний","Темно-синій","Насичений синій","Сірий"
+]);
+/* Conservative whitelist of clearly light ribbon shades.
+   "Однотонні Стандарт+" remains unrestricted. */
+const LIGHT_RIBBON_CODES=new Set([
+  "AM 11","AM 6","AM Silver","AM 10","AM 810","AM 305","AM 714","AM 513","AM 117"
+]);
+function isPrintAllowedForRibbon(printIdx,ribbonIdx=colorIndex){
+  const pr=prints[printIdx],r=ribbons[ribbonIdx];
+  if(!pr||!r)return false;
+  if(!STANDARD_PRINT_NAMES.has(pr.name))return true;
+  return LIGHT_RIBBON_CODES.has(r.code);
+}
+function firstAllowedPrintIndex(ribbonIdx=colorIndex){
+  const black=prints.findIndex(p=>p.name==="Чорний");
+  if(black>=0&&isPrintAllowedForRibbon(black,ribbonIdx))return black;
+  return prints.findIndex((p,i)=>isPrintAllowedForRibbon(i,ribbonIdx));
+}
+
+function currentSnapshot(){return{colorIndex,width,printIndex,qty,urgent}}
+function syncActiveItem(){if(orderItems[activeItemIndex])orderItems[activeItemIndex]={...orderItems[activeItemIndex],...currentSnapshot()}}
+function loadItem(i){
+  if(i<0||i>=orderItems.length)return;
+  syncActiveItem();
+  activeItemIndex=i;
+  const item=orderItems[i];
+  colorIndex=item.colorIndex;width=item.width;printIndex=item.printIndex;qty=item.qty;urgent=item.urgent;if(!isPrintAllowedForRibbon(printIndex,colorIndex)){printIndex=firstAllowedPrintIndex(colorIndex);item.printIndex=printIndex}
+  $("#qtyInput").value=qty;
+  render();
+  $("#config").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function addRibbon(){
+  syncActiveItem();
+  if(orderItems.length>=MAX_RIBBONS){alert("Можна додати до 20 видів стрічки в одному замовленні.");return}
+  const base=currentSnapshot();
+  orderItems.push({...base,qty:100,logoMode:sharedLogo?"shared":"none",customLogo:null});
+  activeItemIndex=orderItems.length-1;
+  qty=100;
+  $("#qtyInput").value=100;
+  render();
+  $("#config").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function removeRibbon(i){
+  if(orderItems.length<=1)return;
+  pendingDeleteIndex=i;
+  const item=orderItems[i],r=ribbons[item.colorIndex];
+  $("#deleteConfirmText").textContent="Стрічка "+(i+1)+" · "+r.name+" буде видалена із замовлення. Підтвердити видалення?";
+  $("#deleteModal").classList.add("open");
+}
+function confirmRibbonDelete(){
+  const i=pendingDeleteIndex;
+  if(i==null||i<0||i>=orderItems.length)return closeDeleteModal();
+  syncActiveItem();
+  const removed=orderItems[i];
+  if(removed.customLogo&&removed.customLogo.url)URL.revokeObjectURL(removed.customLogo.url);
+  orderItems.splice(i,1);
+  if(activeItemIndex>=orderItems.length)activeItemIndex=orderItems.length-1;
+  else if(i<activeItemIndex)activeItemIndex--;
+  const item=orderItems[activeItemIndex];
+  colorIndex=item.colorIndex;width=item.width;printIndex=item.printIndex;qty=item.qty;urgent=item.urgent;
+  if(!isPrintAllowedForRibbon(printIndex,colorIndex)){printIndex=firstAllowedPrintIndex(colorIndex);item.printIndex=printIndex}
+  $("#qtyInput").value=qty;
+  closeDeleteModal();
+  render();
+  showToast("Стрічку видалено");
+}
+function closeDeleteModal(){pendingDeleteIndex=null;$("#deleteModal").classList.remove("open")}
+function adjustOrderItemQty(i,delta){
+  if(i<0||i>=orderItems.length)return;
+  syncActiveItem();
+  const next=Math.max(100,Math.min(10000,orderItems[i].qty+delta));
+  orderItems[i].qty=next;
+  if(i===activeItemIndex){
+    qty=next;
+    $("#qtyInput").value=next;
+  }
+  render();
+}
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+function tierInfo(){const r=ribbons[colorIndex];const priceWidth=(r.code==="AM 814"&&width===40)?30:width;const t=prices[priceWidth];if(!t)return null;const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);let tier=steps[0];steps.forEach(s=>{if(qty>=s)tier=s});return{tier,price:t[tier],priceWidth}}
+
+function basePriceInfo(){
+  const r=ribbons[colorIndex];
+  const priceWidth=(r.code==="AM 814"&&width===40)?30:width;
+  const t=prices[priceWidth];
+  if(!t||t[100]==null)return null;
+  return{base:t[100],priceWidth};
+}
+function benefitFor(q){
+  const r=ribbons[colorIndex];
+  const priceWidth=(r.code==="AM 814"&&width===40)?30:width;
+  const t=prices[priceWidth];
+  if(!t||t[100]==null)return null;
+  const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);
+  let tier=steps[0];
+  steps.forEach(s=>{if(q>=s)tier=s});
+  const current=t[tier],base=t[100];
+  const percent=base>0?((base-current)/base*100):0;
+  const money=(base-current)*q;
+  return{percent,money,current,base,tier};
+}
+
+/* Popular-choice scaffold: intentionally inactive until real order statistics exist. */
+const popularityInsights={enabled:false,source:"real_orders_only",minimumSampleSize:30,byRibbon:{}};
+function nextTierInfo(){
+  const r=ribbons[colorIndex],priceWidth=(r.code==="AM 814"&&width===40)?30:width,t=prices[priceWidth];
+  if(!t)return null;
+  const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);
+  const next=steps.find(s=>s>qty);if(!next)return null;
+  const currentTier=[...steps].reverse().find(s=>qty>=s)||steps[0];
+  const printExtra=prints[printIndex].extra;
+  let currentPm=t[currentTier]+printExtra,nextPm=t[next]+printExtra;
+  if(urgent){currentPm*=1.2;nextPm*=1.2}
+  return{next,currentTier,currentPm,nextPm,extraMeters:next-qty,extraCost:next*nextPm-qty*currentPm};
+}
+function comparisonTiers(){
+  const r=ribbons[colorIndex],priceWidth=(r.code==="AM 814"&&width===40)?30:width,t=prices[priceWidth];if(!t)return[];
+  const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);
+  let pos=steps.findIndex(s=>s>=qty);if(pos<0)pos=steps.length-1;
+  let indices=[Math.max(0,pos-1),pos,Math.min(steps.length-1,pos+1)];
+  indices=[...new Set(indices)];
+  while(indices.length<3&&indices[0]>0)indices.unshift(indices[0]-1);
+  while(indices.length<3&&indices[indices.length-1]<steps.length-1)indices.push(indices[indices.length-1]+1);
+  return indices.map(i=>{const q=steps[i];let pm=t[q]+prints[printIndex].extra;if(urgent)pm*=1.2;return{q,pm,total:q*pm,current:q===qty}});
+}
+function renderSalesAssist(){
+  const n=nextTierInfo(),box=$("#tierUpsell");
+  if(n){
+    box.classList.remove("hidden");
+    $("#tierUpsellTitle").textContent="Ще "+n.extraMeters.toLocaleString("uk-UA")+" м — і ціна стане "+fmt(n.nextPm)+" грн/м";
+    $("#tierUpsellText").textContent="Наступний оптовий рівень: "+n.next.toLocaleString("uk-UA")+" м · додатково "+Math.max(0,Math.round(n.extraCost)).toLocaleString("uk-UA")+" грн";
+    $("#jumpNextTier").onclick=()=>{qty=n.next;$("#qtyInput").value=qty;render()};
+  }else box.classList.add("hidden");
+  if(!$("#tierCompare").classList.contains("hidden"))renderTierComparison();
+}
+function renderTierComparison(){
+  const rows=comparisonTiers(),root=$("#tierCompareRows");root.innerHTML='<div class="tier-compare-row head"><span>Метраж</span><span>Ціна/м</span><span>Разом</span></div>';
+  rows.forEach(x=>{const d=document.createElement("div");d.className="tier-compare-row"+(x.current?" current":"");d.innerHTML='<button type="button">'+x.q.toLocaleString("uk-UA")+' м</button><span>'+fmt(x.pm)+' грн</span><span>'+Math.round(x.total).toLocaleString("uk-UA")+' грн</span>';d.querySelector("button").onclick=()=>{qty=x.q;$("#qtyInput").value=qty;render()};root.appendChild(d)});
+  if(rows.length>1){const first=rows[0],last=rows[rows.length-1],saving=(first.pm-last.pm);if(saving>0){const s=document.createElement("div");s.className="tier-compare-saving";s.textContent="На більшому тиражі ціна нижча до "+fmt(saving)+" грн на кожному метрі";root.appendChild(s)}}
+}
+function calc(){const t=tierInfo();if(!t)return{pm:null,total:null,tier:null};let pm=t.price+prints[printIndex].extra;if(urgent)pm*=1.2;return{pm,total:pm*qty,tier:t.tier}}
+function calcForItem(item){
+  const r=ribbons[item.colorIndex];
+  const priceWidth=(r.code==="AM 814"&&item.width===40)?30:item.width;
+  const t=prices[priceWidth];
+  if(!t)return{pm:null,total:null,tier:null};
+  const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);
+  let tier=steps[0];steps.forEach(s=>{if(item.qty>=s)tier=s});
+  let pm=t[tier]+prints[item.printIndex].extra;
+  if(item.urgent)pm*=1.2;
+  return{pm,total:pm*item.qty,tier};
+}
+function benefitForItem(item){
+  const r=ribbons[item.colorIndex];
+  const priceWidth=(r.code==="AM 814"&&item.width===40)?30:item.width;
+  const t=prices[priceWidth];
+  if(!t||t[100]==null)return null;
+  const steps=Object.keys(t).map(Number).sort((a,b)=>a-b);
+  let tier=steps[0];steps.forEach(s=>{if(item.qty>=s)tier=s});
+  const current=t[tier],base=t[100];
+  const percent=base>0?((base-current)/base*100):0;
+  const money=(base-current)*item.qty;
+  return{percent,money,current,base,tier};
+}
+function renderRibbonTabs(){
+  const box=$("#ribbonTabs");box.innerHTML="";
+  orderItems.forEach((item,i)=>{
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="ribbon-tab"+(i===activeItemIndex?" active":"");
+    const label=document.createElement("span");
+    label.textContent="Стрічка "+(i+1);
+    b.appendChild(label);
+    if(i===activeItemIndex){
+      const check=document.createElement("span");
+      check.className="tab-check";
+      check.textContent="✓";
+      b.appendChild(check);
+    }
+    if(i>0){
+      const close=document.createElement("span");
+      close.className="ribbon-tab-close";
+      close.textContent="×";
+      close.title="Видалити стрічку "+(i+1);
+      close.setAttribute("role","button");
+      close.setAttribute("aria-label","Видалити стрічку "+(i+1));
+      close.onclick=e=>{e.stopPropagation();removeRibbon(i)};
+      b.appendChild(close);
+    }
+    b.onclick=()=>loadItem(i);
+    box.appendChild(b);
+  });
+  const addTop=document.createElement("button");
+  addTop.type="button";
+  addTop.id="addRibbonTop";
+  addTop.className="ribbon-tab-add";
+  addTop.onclick=addRibbon;
+  box.appendChild(addTop);
+  const disabled=orderItems.length>=MAX_RIBBONS;
+  addTop.disabled=disabled;
+  $("#addRibbonMain").disabled=disabled;
+  addTop.textContent=disabled?"Максимум 20":"＋ Додати стрічку";
+  $("#addRibbonMain").textContent=disabled?"Максимум 20 видів стрічки":"＋ Додати ще одну стрічку до замовлення";
+}
+
+function revokeLogoObject(logo){
+  if(!logo)return;
+  if(logo.url&&logo.url.startsWith("blob:"))URL.revokeObjectURL(logo.url);
+}
+function loadLocalImage(url){
+  return new Promise((resolve,reject)=>{
+    const im=new Image();
+    im.onload=()=>resolve(im);
+    im.onerror=reject;
+    im.src=url;
+  });
+}
+function dominantBorderColor(data,w,h){
+  const bins=new Map();
+  const samples=[];
+  const step=Math.max(1,Math.round(Math.min(w,h)/120));
+
+  function add(x,y){
+    const i=(y*w+x)*4;
+    if(data[i+3]<245)return;
+    const r=data[i],g=data[i+1],b=data[i+2];
+    samples.push([r,g,b]);
+    const qr=Math.round(r/16)*16,qg=Math.round(g/16)*16,qb=Math.round(b/16)*16;
+    const key=qr+","+qg+","+qb;
+    bins.set(key,(bins.get(key)||0)+1);
+  }
+
+  for(let x=0;x<w;x+=step){add(x,0);add(x,h-1)}
+  for(let y=0;y<h;y+=step){add(0,y);add(w-1,y)}
+
+  let best=null,bestCount=-1;
+  bins.forEach((count,key)=>{if(count>bestCount){best=key;bestCount=count}});
+  if(!best||!samples.length)return {r:255,g:255,b:255};
+
+  const center=best.split(",").map(Number);
+  let sr=0,sg=0,sb=0,n=0;
+  samples.forEach(([r,g,b])=>{
+    const d=Math.hypot(r-center[0],g-center[1],b-center[2]);
+    if(d<34){sr+=r;sg+=g;sb+=b;n++}
+  });
+  return n?{r:sr/n,g:sg/n,b:sb/n}:{r:center[0],g:center[1],b:center[2]};
+}
+function preprocessLogoCanvas(img){
+  const maxSide=1400;
+  const scale=Math.min(1,maxSide/Math.max(img.naturalWidth||img.width,img.naturalHeight||img.height));
+  const w=Math.max(1,Math.round((img.naturalWidth||img.width)*scale));
+  const h=Math.max(1,Math.round((img.naturalHeight||img.height)*scale));
+
+  const src=document.createElement("canvas");
+  src.width=w;src.height=h;
+  const s=src.getContext("2d",{willReadFrequently:true});
+  s.clearRect(0,0,w,h);
+  s.drawImage(img,0,0,w,h);
+
+  const id=s.getImageData(0,0,w,h);
+  const d=id.data;
+  let transparent=0;
+  for(let i=3;i<d.length;i+=4)if(d[i]<245)transparent++;
+  const hasRealTransparency=transparent/(w*h)>.01;
+
+  let bg=null;
+  if(!hasRealTransparency)bg=dominantBorderColor(d,w,h);
+
+  let minX=w,minY=h,maxX=-1,maxY=-1;
+  for(let y=0;y<h;y++){
+    for(let x=0;x<w;x++){
+      const i=(y*w+x)*4;
+      const originalAlpha=d[i+3]/255;
+      let alpha=originalAlpha;
+
+      if(bg){
+        const dr=d[i]-bg.r,dg=d[i+1]-bg.g,db=d[i+2]-bg.b;
+        const dist=Math.sqrt(dr*dr+dg*dg+db*db);
+        // Solid backgrounds vanish; antialiased logo edges stay soft.
+        const soft=(dist-16)/(64-16);
+        alpha=originalAlpha*Math.max(0,Math.min(1,soft));
+      }
+
+      d[i+3]=Math.round(alpha*255);
+      if(d[i+3]>12){
+        if(x<minX)minX=x;if(x>maxX)maxX=x;
+        if(y<minY)minY=y;if(y>maxY)maxY=y;
+      }
+    }
+  }
+
+  s.putImageData(id,0,0);
+
+  // Safety fallback if automatic removal could not find a foreground.
+  if(maxX<minX||maxY<minY){
+    minX=0;minY=0;maxX=w-1;maxY=h-1;
+  }
+
+  const pad=Math.max(4,Math.round(Math.max(w,h)*.012));
+  minX=Math.max(0,minX-pad);minY=Math.max(0,minY-pad);
+  maxX=Math.min(w-1,maxX+pad);maxY=Math.min(h-1,maxY+pad);
+
+  const cw=maxX-minX+1,ch=maxY-minY+1;
+  const cropped=document.createElement("canvas");
+  cropped.width=cw;cropped.height=ch;
+  cropped.getContext("2d").drawImage(src,minX,minY,cw,ch,0,0,cw,ch);
+  return cropped;
+}
+async function makeLogoFile(file){
+  const type=file.type||"";
+  const isImage=type.startsWith("image/")||/\.(png|jpe?g|webp|svg)$/i.test(file.name);
+
+  // PDF stays attached to the order, but live visualization is image-only.
+  if(!isImage){
+    return {file,name:file.name,type,url:URL.createObjectURL(file),processedCanvas:null,backgroundRemoved:false};
+  }
+
+  const sourceUrl=URL.createObjectURL(file);
+  try{
+    const img=await loadLocalImage(sourceUrl);
+    const processedCanvas=preprocessLogoCanvas(img);
+    const blob=await new Promise(resolve=>processedCanvas.toBlob(resolve,"image/png"));
+    const url=blob?URL.createObjectURL(blob):sourceUrl;
+    if(blob)URL.revokeObjectURL(sourceUrl);
+    return {
+      file,name:file.name,type,
+      url,
+      processedCanvas,
+      backgroundRemoved:true
+    };
+  }catch(e){
+    return {file,name:file.name,type,url:sourceUrl,processedCanvas:null,backgroundRemoved:false};
+  }
+}
+function activeLogo(){
+  const item=orderItems[activeItemIndex];if(!item)return null;
+  if(item.logoMode==="custom"&&item.customLogo)return item.customLogo;
+  if(item.logoMode==="shared"&&sharedLogo)return sharedLogo;
+  return null;
+}
+function itemLogo(item){
+  if(item.logoMode==="custom"&&item.customLogo)return item.customLogo;
+  if(item.logoMode==="shared"&&sharedLogo)return sharedLogo;
+  return null;
+}
+async function setSharedLogo(file){
+  if(!file)return;
+  showToast("Обробляємо логотип…");
+  const prepared=await makeLogoFile(file);
+  revokeLogoObject(sharedLogo);
+  sharedLogo=prepared;
+  orderItems.forEach(item=>{if(item.logoMode!=="custom"){item.logoMode="shared";item.customLogo=null}});
+  render();
+  showToast(prepared.processedCanvas?"Логотип готовий до онлайн-візуалізації":"Файл додано");
+}
+async function setCustomLogo(file){
+  if(!file)return;
+  showToast("Обробляємо логотип…");
+  const prepared=await makeLogoFile(file);
+  const item=orderItems[activeItemIndex];
+  revokeLogoObject(item.customLogo);
+  item.customLogo=prepared;item.logoMode="custom";render();
+  showToast(prepared.processedCanvas?"Логотип готовий до онлайн-візуалізації":"Файл додано");
+}
+function useSharedLogo(){
+  if(!sharedLogo)return;
+  const item=orderItems[activeItemIndex];
+  revokeLogoObject(item.customLogo);
+  item.customLogo=null;item.logoMode="shared";render();
+}
+function clearActiveLogo(){
+  const item=orderItems[activeItemIndex];
+  revokeLogoObject(item.customLogo);
+  item.customLogo=null;item.logoMode="none";render();
+}
+function renderLogoPanel(){
+  const item=orderItems[activeItemIndex],logo=activeLogo();
+  const upload=$("#logoUploadState"),loaded=$("#logoLoadedState"),preview=$("#logoPreview"),actions=$("#logoActions");
+  if(!logo){
+    upload.classList.remove("hidden");loaded.classList.add("hidden");
+    $("#uploadSharedLogo").textContent=sharedLogo?"Завантажити / використати":"Обрати файл";
+    return;
+  }
+  upload.classList.add("hidden");loaded.classList.remove("hidden");
+  $("#logoFileName").textContent=logo.name;
+  $("#logoModeText").textContent=(item.logoMode==="custom"?"Окремий логотип для цієї стрічки":"Спільний логотип")+" · "+(logo.processedCanvas?"фон прибрано автоматично · готовий для онлайн-візуалізації":"файл додано");
+  preview.innerHTML="";
+  if((logo.type||"").startsWith("image/")||/\.svg$/i.test(logo.name)){const img=document.createElement("img");img.src=logo.url;img.alt="Логотип";preview.appendChild(img)}
+  else{const s=document.createElement("span");s.textContent="PDF";preview.appendChild(s)}
+  actions.innerHTML="";
+  const change=document.createElement("button");change.type="button";change.className="primary";
+  change.textContent=item.logoMode==="shared"?"Інший для цієї стрічки":"Замінити";
+  change.onclick=()=>$("#customLogoInput").click();actions.appendChild(change);
+  if(item.logoMode==="shared"){
+    const replaceAll=document.createElement("button");replaceAll.type="button";replaceAll.textContent="Змінити для всіх";replaceAll.onclick=()=>$("#sharedLogoInput").click();actions.appendChild(replaceAll);
+  }else if(sharedLogo){
+    const use=document.createElement("button");use.type="button";use.textContent="Використати спільний";use.onclick=useSharedLogo;actions.appendChild(use);
+  }
+  const clear=document.createElement("button");clear.type="button";clear.className="danger";clear.textContent="Очистити";clear.onclick=clearActiveLogo;actions.appendChild(clear);
+}
+function renderOrderSummary(){
+  syncActiveItem();
+  renderRibbonTabs();
+  const box=$("#orderItems");box.innerHTML="";
+  let total=0,regularTotal=0,totalSaving=0,totalQty=0;
+  orderItems.forEach((item,i)=>{
+    const r=ribbons[item.colorIndex],pr=prints[item.printIndex],c=calcForItem(item),ben=benefitForItem(item);
+    const saving=(ben&&item.qty>100&&ben.percent>0)?ben.money:0;
+    const itemTotal=c.total==null?0:c.total;
+    total+=itemTotal;regularTotal+=itemTotal+saving;totalSaving+=saving;totalQty+=item.qty;
+    const d=document.createElement("div");d.className="order-item";
+    d.innerHTML='<div class="order-item-head"><div class="order-item-title"><span class="order-item-dot" style="background:'+r.hex+'"></span><div><b>Стрічка '+(i+1)+' · '+r.name+'</b><span>'+r.code+' · '+item.width+' мм · '+pr.name+' · '+item.qty.toLocaleString("uk-UA")+' м · '+(item.urgent?'Терміново':'Стандарт')+'</span><span class="order-logo-status '+(itemLogo(item)?'ready':'empty')+'">'+(itemLogo(item)?'✓ Логотип додано':'Логотип не додано')+'</span></div></div><div class="order-item-price"><b>'+(c.total==null?'Уточнити':fmt(c.total)+' грн')+'</b>'+(saving>0?'<span class="order-item-saving">економія '+Math.round(saving).toLocaleString("uk-UA")+' грн</span>':'')+'</div></div><div class="order-item-bottom"><div class="order-item-qty"><button type="button" class="item-minus" aria-label="Зменшити метраж">−</button><span>'+item.qty.toLocaleString("uk-UA")+' м</span><button type="button" class="item-plus" aria-label="Збільшити метраж">+</button></div><div class="order-item-actions"><button type="button" class="edit-item">Змінити</button><button type="button" class="duplicate-item">Дублювати</button>'+(orderItems.length>1?'<button type="button" class="remove-item">Видалити</button>':'')+'</div></div>';
+    d.querySelector(".edit-item").onclick=()=>loadItem(i);d.querySelector(".duplicate-item").onclick=()=>duplicateRibbon(i);
+    d.querySelector(".item-minus").onclick=()=>adjustOrderItemQty(i,-100);
+    d.querySelector(".item-plus").onclick=()=>adjustOrderItemQty(i,100);
+    const rm=d.querySelector(".remove-item");if(rm)rm.onclick=()=>removeRibbon(i);
+    box.appendChild(d);
+  });
+  $("#orderQty").textContent=totalQty.toLocaleString("uk-UA")+" м";
+  $("#total").textContent=fmt(total)+" грн";
+  $("#mobileTotal").textContent=fmt(total)+" грн";
+  const wb=$("#wholesaleBenefit"),rp=$("#regularPriceWrap");
+  if(totalSaving>0&&regularTotal>0){
+    const overallPercent=totalSaving/regularTotal*100;
+    rp.classList.remove("hidden");
+    $("#regularTotal").textContent=Math.round(regularTotal).toLocaleString("uk-UA")+" грн";
+    wb.classList.remove("hidden");
+    $("#benefitMoney").textContent=Math.round(totalSaving).toLocaleString("uk-UA")+" грн";
+    $("#benefitPercent").textContent=Math.round(overallPercent)+"%";
+  }else{
+    rp.classList.add("hidden");$("#regularTotal").textContent="";
+    wb.classList.add("hidden");$("#benefitMoney").textContent="";$("#benefitPercent").textContent="";
+  }
+}
+function fmt(n){return n==null?"—":n.toLocaleString("uk-UA",{minimumFractionDigits:Number.isInteger(n)?0:2,maximumFractionDigits:2})}
+function render(){const r=ribbons[colorIndex],p=prints[printIndex],c=calc();$$(".term").forEach(x=>x.classList.toggle("active",(x.dataset.u==="1")===urgent));document.documentElement.style.setProperty("--ribbon",r.hex);document.documentElement.style.setProperty("--print",p.hex);$("#colorName").textContent=r.name;$("#colorCode").textContent=r.code;$("#visMeta").textContent=r.name+" · "+p.name+" друк";$("#swatches").innerHTML="";const visibleRibbonCount=window.matchMedia("(max-width:600px)").matches?7:5;const start=Math.max(0,Math.min(colorIndex-Math.floor(visibleRibbonCount/2),ribbons.length-visibleRibbonCount));ribbons.slice(start,start+visibleRibbonCount).forEach(x=>{const i=ribbons.indexOf(x),b=document.createElement("button");b.className="swatch"+(i===colorIndex?" active":"");b.style.background=x.hex;b.onclick=()=>setColor(i);$("#swatches").appendChild(b)});const more=document.createElement("button");more.className="more";more.textContent="+"+(ribbons.length-visibleRibbonCount);more.onclick=openCat;$("#swatches").appendChild(more);$("#widths").innerHTML="";const widthOptions=[10,15,20,25];if(r.widths.includes(30))widthOptions.push(30);if(r.widths.includes(40))widthOptions.push(40);widthOptions.forEach(w=>{const b=document.createElement("button");b.className="choice "+(w===width?"active ":"")+(!r.widths.includes(w)?"disabled":"");b.textContent=w+" мм";if(r.widths.includes(w))b.onclick=()=>{width=w;render()};$("#widths").appendChild(b)});$("#prints").innerHTML="";const visiblePrintCount=window.matchMedia("(max-width:600px)").matches?7:5;prints.slice(0,visiblePrintCount).forEach((x,i)=>{const allowed=isPrintAllowedForRibbon(i,colorIndex),d=document.createElement("div");d.className="print"+(i===printIndex?" active":"")+(!allowed?" disabled":"");const c1=document.createElement("div");c1.className="pc";c1.style.background=x.kind==="metallic"?"linear-gradient(135deg,"+x.hex+",#ffffff88,"+x.hex+")":x.hex;d.appendChild(c1);d.insertAdjacentHTML("beforeend","<b>"+x.name+"</b><span>"+(x.extra?"+4 грн/м":"входить")+"</span>");if(allowed)d.onclick=()=>{printIndex=i;render()};$("#prints").appendChild(d)});const other=document.createElement("div");other.className="print";other.innerHTML='<div class="pc" style="display:grid;place-items:center;background:#f2f0ed">+'+(prints.length-visiblePrintCount)+'</div><b>Інші</b><span>+4 грн/м</span>';other.onclick=openPrintCat;$("#prints").appendChild(other);$("#qtygrid").innerHTML="";[100,200,300,400,500,1000,2000,3000,4000,5000,10000].forEach(q=>{const b=document.createElement("button");b.className=q===qty?"active":"";const ben=benefitFor(q);const saving=(ben&&q>100&&ben.percent>0)?'<span class="saving">−'+Math.round(ben.percent)+'%</span>':'';b.innerHTML=((q===300||q===500)?'<span class="hit">ХІТ</span>':'')+q.toLocaleString("uk-UA")+" м"+saving;b.onclick=()=>{qty=q;$("#qtyInput").value=q;render()};$("#qtygrid").appendChild(b)});$("#tierHint").textContent=c.tier?((r.code==="AM 814"&&width===40?"Для AM 814, 40 мм застосовується прайс 30 мм. ":"")+"Для вашого метражу діє ціна за метр від "+c.tier.toLocaleString("uk-UA")+" м."):"Ціна уточнюється у менеджера.";syncActiveItem();renderLogoPanel();renderOrderSummary();renderConversionTools();renderSalesAssist();scheduleSave(); if(typeof updateGallery==="function") updateGallery(); if(typeof renderReviews==="function") renderReviews();}
+function setColor(i){colorIndex=i;const r=ribbons[i];if(!r.widths.includes(width))width=r.widths.find(w=>prices[w])||r.widths[0];if(!isPrintAllowedForRibbon(printIndex,i))printIndex=firstAllowedPrintIndex(i);render()}
+$$(".term").forEach(b=>b.onclick=()=>{urgent=b.dataset.u==="1";$$(".term").forEach(x=>x.classList.toggle("active",x===b));render()});
+$("#addRibbonMain").onclick=addRibbon;
+$("#uploadSharedLogo").onclick=()=>$("#sharedLogoInput").click();
+$("#sharedLogoInput").onchange=async e=>{const f=e.target.files&&e.target.files[0];if(f)await setSharedLogo(f);e.target.value=""};
+$("#customLogoInput").onchange=async e=>{const f=e.target.files&&e.target.files[0];if(f)await setCustomLogo(f);e.target.value=""};
+$("#shareConfig").onclick=async()=>{const u=new URL(location.href);u.searchParams.set("cfg",encodeConfig());const link=u.toString();try{if(navigator.share){await navigator.share({title:"Моя конфігурація ArtMone",url:link});return}await navigator.clipboard.writeText(link);showToast("Посилання скопійовано")}catch(e){}};
+$("#saveQuote").onclick=()=>$("#quoteModal").classList.add("open");$("#closeQuoteModal").onclick=()=>$("#quoteModal").classList.remove("open");$("#quoteModal").onclick=e=>{if(e.target.id==="quoteModal")$("#quoteModal").classList.remove("open")};
+$("#quoteSubmit").onclick=()=>{const v=$("#quoteContact").value.trim();if(!v)return showToast("Вкажіть контакт");try{localStorage.setItem("artmone_quote_contact",v)}catch(e){}$("#quoteModal").classList.remove("open");showToast("Прорахунок збережено")};
+$("#needHelp").onclick=()=>showToast("Контакт менеджера підключимо у фінальній версії");
+$("#compareTiers").onclick=()=>{$("#tierCompare").classList.toggle("hidden");if(!$("#tierCompare").classList.contains("hidden"))renderTierComparison()};
+$("#closeTierCompare").onclick=()=>$("#tierCompare").classList.add("hidden");
+
+$("#cancelDelete").onclick=closeDeleteModal;
+$("#closeDeleteModal").onclick=closeDeleteModal;
+$("#confirmDelete").onclick=confirmRibbonDelete;
+$("#deleteModal").onclick=e=>{if(e.target.id==="deleteModal")closeDeleteModal()};
+
+$("#minus").onclick=()=>{qty=Math.max(100,qty-100);$("#qtyInput").value=qty;render()};$("#plus").onclick=()=>{qty=Math.min(10000,qty+100);$("#qtyInput").value=qty;render()};$("#qtyInput").onchange=e=>{let n=Math.round(Number(e.target.value)/100)*100;if(!Number.isFinite(n))n=500;n=Math.max(100,Math.min(10000,n));qty=n;e.target.value=n;render()};
+function openCat(){$("#catalog").classList.add("open")}function closeCat(){$("#catalog").classList.remove("open")}$("#allColors").onclick=openCat;$("#closeCat").onclick=closeCat;[...new Set(ribbons.map(r=>r.group))].forEach(g=>{const h=document.createElement("div");h.className="gtitle";h.textContent=g;$("#groups").appendChild(h);const grid=document.createElement("div");grid.className="catgrid";ribbons.forEach((r,i)=>{if(r.group!==g)return;const d=document.createElement("button");d.className="catitem";d.innerHTML='<span class="catdot" style="background:'+r.hex+'"></span><span><b>'+r.name+'</b><span>'+r.code+' · '+r.widths.join(" / ")+' мм</span></span>';d.onclick=()=>{setColor(i);closeCat()};grid.appendChild(d)});$("#groups").appendChild(grid)});
+const printGroups=[
+  ["Блискучі Унікальні",["Фламінго","Бурштин","Півонія","Золото","Срібло"]],
+  ["Блискучі Стандарт",["Червоний оксамит","Зелений оксамит","Синій оксамит"]],
+  ["Однотонні Стандарт+",["Рожево-ліловий","Зелено-трав’янистий","Червоно-кораловий","Синій небесний","Бежевий пісок","Білий","Чорний"]],
+  ["Однотонні Стандарт",["Фуксія","Рожево-фіолетовий","Фіолетовий","Темно-фіолетовий","Коричневий","Яскраво-червоний","Світло-червоний","Темно-червоний","Бордовий","Теплий коричневий","Оранжевий","Теплий жовтий","Жовтий","Лимон","Смарагдово-зелений","М’ятний","Темно-синій","Насичений синій","Сірий"]]
+];
+function renderPrintCatalog(){
+  const root=$("#printGroups");root.innerHTML="";
+  printGroups.forEach(([groupName,groupColors])=>{
+    const h=document.createElement("div");h.className="gtitle";h.textContent=groupName;root.appendChild(h);
+    if(groupName==="Однотонні Стандарт"){
+      const note=document.createElement("div");note.className="print-group-note";
+      note.textContent="Доступні лише для білих та світлих відтінків стрічки.";
+      root.appendChild(note);
+    }
+    const grid=document.createElement("div");grid.className="catgrid";
+    groupColors.forEach(name=>{
+      const i=prints.findIndex(p=>p.name===name);if(i<0)return;
+      const p=prints[i],allowed=isPrintAllowedForRibbon(i,colorIndex),d=document.createElement("button");
+      d.className="catitem"+(!allowed?" print-disabled":"");
+      d.type="button";d.disabled=!allowed;
+      const bg=p.kind==="metallic"?"linear-gradient(135deg,"+p.hex+",#ffffff88,"+p.hex+")":p.hex;
+      d.innerHTML='<span class="catdot" style="background:'+bg+'"></span><span><b>'+p.name+'</b><span>'+(p.extra?"+4 грн/м":"входить")+'</span></span>';
+      if(allowed)d.onclick=()=>{printIndex=i;closePrintCat();render()};
+      grid.appendChild(d);
+    });
+    root.appendChild(grid);
+  });
+}
+function openPrintCat(){renderPrintCatalog();$("#printCatalog").classList.add("open")}
+function closePrintCat(){$("#printCatalog").classList.remove("open")}
+$("#allPrints").onclick=openPrintCat;$("#closePrintCat").onclick=closePrintCat;
+$("#scrollCalc").onclick=()=>$("#config").scrollIntoView({behavior:"smooth"});
+
+// ===== ArtMone gallery: approved clean mockups + warehouse photo =====
+const approvedMockups={"AM 567":{"bouquet":"assets/mockups/am-567/01-bouquet.webp","roll":"assets/mockups/am-567/02-roll.webp","macro":"assets/mockups/am-567/03-macro.webp","gift":"assets/mockups/am-567/04-gift.webp","beauty":"assets/mockups/am-567/05-beauty-jewelry.webp","sweets":"assets/mockups/am-567/06-confectionery.webp","stock":"assets/mockups/am-567/07-many-rolls.webp"}};
+const warehousePhotos={"AM 6": "assets/warehouse/am-6.webp", "AM 307": "assets/warehouse/am-307.webp", "AM 714": "assets/warehouse/am-714.webp", "AM 030": "assets/warehouse/am-030.webp", "AM 305": "assets/warehouse/am-305.webp", "AM 23": "assets/warehouse/am-23.webp", "AM 18": "assets/warehouse/am-18.webp", "AM 9": "assets/warehouse/am-9.webp", "AM 22": "assets/warehouse/am-22.webp", "AM 824": "assets/warehouse/am-824.webp", "AM 567": "assets/warehouse/am-567.webp", "AM 150": "assets/warehouse/am-150.webp", "AM 17": "assets/warehouse/am-17.webp", "AM 20": "assets/warehouse/am-20.webp", "AM 352": "assets/warehouse/am-352.webp", "AM 420": "assets/warehouse/am-420.webp", "AM 513": "assets/warehouse/am-513.webp", "AM 16": "assets/warehouse/am-16.webp", "AM 850": "assets/warehouse/am-850.webp", "AM 11": "assets/warehouse/am-11.webp", "AM 8": "assets/warehouse/am-8.webp", "AM 155": "assets/warehouse/am-155.webp", "AM 14": "assets/warehouse/am-14.webp", "AM 751": "assets/warehouse/am-751.webp", "AM 017": "assets/warehouse/am-017.webp", "AM 275": "assets/warehouse/am-275.webp", "AM 5": "assets/warehouse/am-5.webp", "AM 369": "assets/warehouse/am-369.webp", "AM 465": "assets/warehouse/am-465.webp", "AM 1": "assets/warehouse/am-1.webp", "AM 10": "assets/warehouse/am-10.webp", "AM 252": "assets/warehouse/am-252.webp", "AM 847": "assets/warehouse/am-847.webp", "AM 009": "assets/warehouse/am-009.webp", "AM 530": "assets/warehouse/am-530.webp", "AM 21": "assets/warehouse/am-21.webp", "AM 4": "assets/warehouse/am-4.webp", "AM 154": "assets/warehouse/am-154.webp", "AM 117": "assets/warehouse/am-117.webp", "AM 250": "assets/warehouse/am-250.webp", "AM WindRed": "assets/warehouse/am-windred.webp", "AM 473": "assets/warehouse/am-473.webp", "AM 363": "assets/warehouse/am-363.webp", "AM 15": "assets/warehouse/am-15.webp", "AM 12": "assets/warehouse/am-12.webp", "AM 814": "assets/warehouse/am-814.webp", "AM Silver": "assets/warehouse/am-silver.webp", "AM 810": "assets/warehouse/am-810.webp", "AM 370": "assets/warehouse/am-370.webp"};
+const sceneLabels={"bouquet":"БУКЕТ КВІТІВ","roll":"БОБІНА + РОЗГОРНУТА СТРІЧКА","macro":"МАКРО ДРУКУ","gift":"ПОДАРУНКОВЕ ПАКУВАННЯ","beauty":"BEAUTY / JEWELLERY","sweets":"КОНДИТЕРСЬКЕ ПАКУВАННЯ","stock":"БАГАТО БОБІН","warehouse":"РЕАЛЬНЕ ФОТО ЗІ СКЛАДУ"};
+let currentGalleryScene="bouquet";
+function updateGallery(){
+  const r=ribbons[colorIndex];
+  const isWarehouse=currentGalleryScene==="warehouse";
+  const isBouquet=currentGalleryScene==="bouquet";
+  const mockups=approvedMockups["AM 567"]||{};
+  const mockupPath=mockups[currentGalleryScene]||"";
+  const hasMockup=!!mockupPath;
+
+  const placeholder=document.getElementById("mockupPlaceholder");
+  const mockupMain=document.getElementById("mockupMain");
+  const warehouseMain=document.getElementById("warehouseMain");
+  const real=warehousePhotos[r.code]||warehousePhotos["AM 567"]||"assets/warehouse/am-567.webp";
+
+  if(isWarehouse){
+    placeholder.style.display="none";
+    mockupMain.style.display="none";
+    warehouseMain.src=real;
+    warehouseMain.style.display="block";
+  }else if(isBouquet){
+    placeholder.style.display="none";
+    warehouseMain.style.display="none";
+    mockupMain.src=mockups.bouquet||"assets/mockups/am-567/01-bouquet.webp";
+    mockupMain.style.display="block";
+  }else if(hasMockup){
+    placeholder.style.display="none";
+    warehouseMain.style.display="none";
+    mockupMain.src=mockupPath;
+    mockupMain.style.display="block";
+  }else{
+    mockupMain.style.display="none";
+    warehouseMain.style.display="none";
+    placeholder.style.display="block";
+  }
+
+  const warehouseThumb=document.getElementById("warehouseThumb");
+  if(warehouseThumb)warehouseThumb.src=real;
+
+  document.querySelectorAll("#galleryThumbs .thumb").forEach(btn=>{
+    const scene=btn.dataset.scene;
+    btn.classList.toggle("active",scene===currentGalleryScene);
+    const img=btn.querySelector("img");
+    if(!img)return;
+    if(scene==="warehouse")img.src=real;
+    else{
+      const thumbPath=mockups[scene]||img.getAttribute("src")||"";
+      if(thumbPath)img.src=thumbPath;
+    }
+  });
+}
+document.querySelectorAll("#galleryThumbs .thumb").forEach(btn=>{
+  btn.addEventListener("click",()=>{currentGalleryScene=btn.dataset.scene;updateGallery();});
+});
+const ribbonReviews={"AM 8":[{"text":"Замовляли стрічку «Сталевий сутінок» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Liora Flowers"},{"text":"Для нашого бренду обрали «Сталевий сутінок» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Lisette Floral Studio"},{"text":"Брали «Сталевий сутінок» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Veloura Beauty"}],"AM 18":[{"text":"Брали «Сталевий графіт» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Maison Lune Bakery"},{"text":"Для нашого бренду обрали «Сталевий графіт» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Alora Floral Studio"},{"text":"Замовляли стрічку «Сталевий графіт» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Mavelle Flowers"}],"AM 21":[{"text":"Замовляли стрічку «Графітова ніч» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Rosalie Flowers"},{"text":"Брали «Графітова ніч» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Nuvella Gifts"},{"text":"Для нашого бренду обрали «Графітова ніч» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Velina Floral Studio"}],"AM 017":[{"text":"Замовляли стрічку «Холодний хром» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Eloria Flowers"},{"text":"Брали «Холодний хром» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Asteria Jewelry"},{"text":"Для нашого бренду обрали «Холодний хром» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Mirelle Floral Studio"}],"AM 11":[{"text":"Для нашого бренду обрали «Срібний лід» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Solaria Floral Studio"},{"text":"Замовляли стрічку «Срібний лід» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Violetta Flowers"},{"text":"Брали «Срібний лід» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Bellami Atelier"}],"AM 6":[{"text":"Для нашого бренду обрали «Срібний баланс» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Eveline Floral Studio"},{"text":"Брали «Срібний баланс» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Monelle Concept Store"},{"text":"Замовляли стрічку «Срібний баланс» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Amelie Flowers"}],"AM Silver":[{"text":"Для нашого бренду обрали «Срібний спокій» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Lorena Floral Studio"},{"text":"Брали «Срібний спокій» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Cielora Cakes"},{"text":"Замовляли стрічку «Срібний спокій» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Florelle Flowers"}],"AM 009":[{"text":"Брали «Платиновий сатин» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Vellune Beauty"},{"text":"Замовляли стрічку «Платиновий сатин» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Nerina Flowers"},{"text":"Для нашого бренду обрали «Платиновий сатин» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Florina Floral Studio"}],"AM 10":[{"text":"Замовляли стрічку «Світле золото» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Aurelia Flowers"},{"text":"Для нашого бренду обрали «Світле золото» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Adelia Floral Studio"},{"text":"Брали «Світле золото» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Aureve Bakery"}],"AM 824":[{"text":"Замовляли стрічку «Шампань витриманий» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Melina Flowers"},{"text":"Для нашого бренду обрали «Шампань витриманий» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Rosella Floral Studio"},{"text":"Брали «Шампань витриманий» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Mireva Gifts"}],"AM 810":[{"text":"Брали «Молочний крем» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Solenne Jewelry"},{"text":"Для нашого бренду обрали «Молочний крем» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Viella Floral Studio"},{"text":"Замовляли стрічку «Молочний крем» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Serena Flowers"}],"AM 20":[{"text":"Замовляли стрічку «Марсала вишня» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Lunaria Flowers"},{"text":"Брали «Марсала вишня» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Norelle Atelier"},{"text":"Для нашого бренду обрали «Марсала вишня» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Noelia Floral Studio"}],"AM 23":[{"text":"Замовляли стрічку «Бургунді глибокий» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Elodie Flowers"},{"text":"Брали «Бургунді глибокий» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Elvane Concept Store"},{"text":"Для нашого бренду обрали «Бургунді глибокий» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Selena Floral Studio"}],"AM 250":[{"text":"Для нашого бренду обрали «Червоний рубін» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Arlena Floral Studio"},{"text":"Замовляли стрічку «Червоний рубін» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Camellia Flowers"},{"text":"Брали «Червоний рубін» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Marova Cakes"}],"AM 252":[{"text":"Для нашого бренду обрали «Червоний оксамит» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Meline Floral Studio"},{"text":"Брали «Червоний оксамит» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Lunelle Beauty"},{"text":"Замовляли стрічку «Червоний оксамит» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Marielle Flowers"}],"AM 1":[{"text":"Для нашого бренду обрали «Гранатовий оксамит» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Orlina Floral Studio"},{"text":"Брали «Гранатовий оксамит» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Cavira Bakery"},{"text":"Замовляли стрічку «Гранатовий оксамит» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Fiorina Flowers"}],"AM WindRed":[{"text":"Брали «Гранатова глибина» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Soreva Gifts"},{"text":"Замовляли стрічку «Гранатова глибина» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Bellora Flowers"},{"text":"Для нашого бренду обрали «Гранатова глибина» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Levana Floral Studio"}],"AM 4":[{"text":"Замовляли стрічку «Вишневий шепіт» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Lisette Flowers"},{"text":"Для нашого бренду обрали «Вишневий шепіт» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Rovella Floral Studio"},{"text":"Брали «Вишневий шепіт» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Amoura Jewelry"}],"AM 751":[{"text":"Замовляли стрічку «Мандариновий імпульс» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Alora Flowers"},{"text":"Для нашого бренду обрали «Мандариновий імпульс» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Arielle Floral Studio"},{"text":"Брали «Мандариновий імпульс» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Novira Atelier"}],"AM 22":[{"text":"Брали «Сапфірова ніч» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Velisse Concept Store"},{"text":"Для нашого бренду обрали «Сапфірова ніч» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Luelle Floral Studio"},{"text":"Замовляли стрічку «Сапфірова ніч» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Velina Flowers"}],"AM 305":[{"text":"Замовляли стрічку «Блакитний небесний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Mirelle Flowers"},{"text":"Брали «Блакитний небесний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Melora Cakes"},{"text":"Для нашого бренду обрали «Блакитний небесний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Mireya Floral Studio"}],"AM 307":[{"text":"Замовляли стрічку «Блакитний повітряний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Solaria Flowers"},{"text":"Брали «Блакитний повітряний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Alvienne Beauty"},{"text":"Для нашого бренду обрали «Блакитний повітряний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Calina Floral Studio"}],"AM 363":[{"text":"Для нашого бренду обрали «Синій класичний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Estelle Floral Studio"},{"text":"Замовляли стрічку «Синій класичний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Eveline Flowers"},{"text":"Брали «Синій класичний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Ravelle Bakery"}],"AM 16":[{"text":"Для нашого бренду обрали «Синя рівновага» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Virelia Floral Studio"},{"text":"Брали «Синя рівновага» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Lumessa Gifts"},{"text":"Замовляли стрічку «Синя рівновага» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Lorena Flowers"}],"AM 370":[{"text":"Для нашого бренду обрали «Синій нічний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Nolana Floral Studio"},{"text":"Брали «Синій нічний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Elaria Jewelry"},{"text":"Замовляли стрічку «Синій нічний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Florina Flowers"}],"AM 352":[{"text":"Брали «Синій сапфір» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Mirellea Atelier"},{"text":"Замовляли стрічку «Синій сапфір» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Adelia Flowers"},{"text":"Для нашого бренду обрали «Синій сапфір» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Avelia Floral Studio"}],"AM 12":[{"text":"Замовляли стрічку «Тауп елегантний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Rosella Flowers"},{"text":"Для нашого бренду обрали «Тауп елегантний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Sorelia Floral Studio"},{"text":"Брали «Тауп елегантний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Calisse Concept Store"}],"AM 15":[{"text":"Замовляли стрічку «Тепла латунь» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Viella Flowers"},{"text":"Для нашого бренду обрали «Тепла латунь» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Elvina Floral Studio"},{"text":"Брали «Тепла латунь» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Orvela Cakes"}],"AM 14":[{"text":"Брали «Золото витримане» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Seloria Beauty"},{"text":"Для нашого бренду обрали «Золото витримане» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Ruelle Floral Studio"},{"text":"Замовляли стрічку «Золото витримане» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Noelia Flowers"}],"AM 5":[{"text":"Замовляли стрічку «Золотий престиж» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Selena Flowers"},{"text":"Брали «Золотий престиж» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Vionne Bakery"},{"text":"Для нашого бренду обрали «Золотий престиж» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Malina Floral Studio"}],"AM 814":[{"text":"Замовляли стрічку «Бронзовий тауп» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Arlena Flowers"},{"text":"Брали «Бронзовий тауп» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Avelisse Gifts"},{"text":"Для нашого бренду обрали «Бронзовий тауп» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Liora Floral Studio"}],"AM 714":[{"text":"Для нашого бренду обрали «Нюдовий баланс» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Mavelle Floral Studio"},{"text":"Замовляли стрічку «Нюдовий баланс» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Meline Flowers"},{"text":"Брали «Нюдовий баланс» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Nerelle Jewelry"}],"AM 847":[{"text":"Для нашого бренду обрали «Кремовий мокко» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Rosalie Floral Studio"},{"text":"Брали «Кремовий мокко» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Lorisse Atelier"},{"text":"Замовляли стрічку «Кремовий мокко» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Orlina Flowers"}],"AM 850":[{"text":"Для нашого бренду обрали «Коричневий глибокий» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Eloria Floral Studio"},{"text":"Брали «Коричневий глибокий» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Malvera Concept Store"},{"text":"Замовляли стрічку «Коричневий глибокий» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Levana Flowers"}],"AM 17":[{"text":"Брали «Смарагдовий графіт» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Elunea Cakes"},{"text":"Замовляли стрічку «Смарагдовий графіт» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Rovella Flowers"},{"text":"Для нашого бренду обрали «Смарагдовий графіт» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Violetta Floral Studio"}],"AM 513":[{"text":"Замовляли стрічку «М’ятний шовковий» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Arielle Flowers"},{"text":"Для нашого бренду обрали «М’ятний шовковий» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Amelie Floral Studio"},{"text":"Брали «М’ятний шовковий» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Sorellea Beauty"}],"AM 530":[{"text":"Замовляли стрічку «Салатовий ніжний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Luelle Flowers"},{"text":"Для нашого бренду обрали «Салатовий ніжний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Florelle Floral Studio"},{"text":"Брали «Салатовий ніжний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Viretta Bakery"}],"AM 567":[{"text":"Брали «Оливковий спокій» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Almelle Gifts"},{"text":"Для нашого бренду обрали «Оливковий спокій» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Nerina Floral Studio"},{"text":"Замовляли стрічку «Оливковий спокій» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Mireya Flowers"}],"AM 369":[{"text":"Замовляли стрічку «Морський оксамит» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Calina Flowers"},{"text":"Брали «Морський оксамит» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Nuvora Jewelry"},{"text":"Для нашого бренду обрали «Морський оксамит» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Aurelia Floral Studio"}],"AM 420":[{"text":"Замовляли стрічку «Лавандовий шепіт» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Estelle Flowers"},{"text":"Брали «Лавандовий шепіт» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Belisse Atelier"},{"text":"Для нашого бренду обрали «Лавандовий шепіт» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Melina Floral Studio"}],"AM 465":[{"text":"Для нашого бренду обрали «Королівський фіолет» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Serena Floral Studio"},{"text":"Замовляли стрічку «Королівський фіолет» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Virelia Flowers"},{"text":"Брали «Королівський фіолет» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Cavellea Concept Store"}],"AM 473":[{"text":"Для нашого бренду обрали «Сливовий сатин» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Lunaria Floral Studio"},{"text":"Брали «Сливовий сатин» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Rosavie Cakes"},{"text":"Замовляли стрічку «Сливовий сатин» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Nolana Flowers"}],"AM 030":[{"text":"Для нашого бренду обрали «Чорний класичний» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Elodie Floral Studio"},{"text":"Брали «Чорний класичний» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Lumelle Beauty"},{"text":"Замовляли стрічку «Чорний класичний» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Avelia Flowers"}],"AM 155":[{"text":"Брали «Рожева пудра» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Miresta Bakery"},{"text":"Замовляли стрічку «Рожева пудра» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Sorelia Flowers"},{"text":"Для нашого бренду обрали «Рожева пудра» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Camellia Floral Studio"}],"AM 150":[{"text":"Замовляли стрічку «Пудрова мальва» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Elvina Flowers"},{"text":"Для нашого бренду обрали «Пудрова мальва» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Marielle Floral Studio"},{"text":"Брали «Пудрова мальва» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Aurella Gifts"}],"AM 154":[{"text":"Замовляли стрічку «Рожевий шовк» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Ruelle Flowers"},{"text":"Для нашого бренду обрали «Рожевий шовк» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Fiorina Floral Studio"},{"text":"Брали «Рожевий шовк» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Novellea Jewelry"}],"AM 117":[{"text":"Брали «Пудрова вуаль» для оформлення клієнтських замовлень. Колір добре поєднується з коробками та папером, а брендована стрічка одразу додає пакуванню преміальності.","author":"Velaria Atelier"},{"text":"Для нашого бренду обрали «Пудрова вуаль» і точно влучили з кольором. Стрічка гарно тримає форму, друк чіткий, а готові замовлення тепер виглядають набагато цілісніше.","author":"Bellora Floral Studio"},{"text":"Замовляли стрічку «Пудрова вуаль» для пакування, у живу відтінок виглядає дуже стильно, а після нанесення логотипа пакування стало значно дорожчим на вигляд. Якість сатину теж сподобалась.","author":"Malina Flowers"}]};
+function renderReviews(){
+  const r = ribbons[colorIndex];
+  const list = ribbonReviews[r.code] || [];
+  const wrap = document.getElementById("dynamicReviews");
+  if(!wrap) return;
+  wrap.innerHTML = "";
+  list.forEach(item=>{
+    const card = document.createElement("div");
+    card.className = "review";
+    card.innerHTML = '<div class="stars">★★★★★</div>' + item.text + '<b>' + item.author + '</b>';
+    wrap.appendChild(card);
+  });
+}
+
+if(!applySharedConfig())restoreConfig();
+render();
+</script>
+<script>
+
+
+
+</script>
+</body></html>
