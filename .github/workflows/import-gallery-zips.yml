@@ -1,10 +1,10 @@
-name: Import gallery ZIPs
+name: Import gallery bundle
 
 on:
   push:
     branches: [main]
     paths:
-      - 'assets/import/*.zip'
+      - 'assets/import/bundle.zip'
       - '.github/workflows/import-gallery-zips.yml'
 
 permissions:
@@ -15,27 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Import AM galleries
+      - name: Import AM1 and AM850 galleries
         shell: bash
         run: |
           set -euo pipefail
-          changed=0
-          if [ -f assets/import/am-1.zip ]; then
-            mkdir -p assets/mockups/am-1
-            unzip -o assets/import/am-1.zip -d assets/mockups/am-1
-            rm assets/import/am-1.zip
-            changed=1
+          if [ ! -f assets/import/bundle.zip ]; then
+            exit 0
           fi
-          if [ -f assets/import/am-850.zip ]; then
-            mkdir -p assets/mockups/am-850
-            unzip -o assets/import/am-850.zip -d assets/mockups/am-850
-            rm assets/import/am-850.zip
-            changed=1
-          fi
-          if [ "$changed" = "1" ]; then
-            git config user.name 'ArtMone Bot'
-            git config user.email 'actions@users.noreply.github.com'
-            git add assets/mockups assets/import
-            git commit -m 'Import AM1 and AM850 gallery images' || exit 0
-            git push
-          fi
+          mkdir -p assets/mockups
+          unzip -o assets/import/bundle.zip -d assets/mockups
+          rm assets/import/bundle.zip
+          git config user.name 'ArtMone Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add assets/mockups assets/import
+          git commit -m 'Import AM1 and AM850 gallery images' || exit 0
+          git push
