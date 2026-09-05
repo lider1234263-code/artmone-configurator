@@ -19,13 +19,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          expected=6
+          expected=17
           count=$(find assets/import -maxdepth 1 -name 'chunk_*.txt' | wc -l)
           if [ "$count" -ne "$expected" ]; then
             echo "Waiting for all chunks: $count/$expected"
             exit 0
           fi
-          cat assets/import/chunk_00.txt assets/import/chunk_01.txt assets/import/chunk_02.txt assets/import/chunk_03.txt assets/import/chunk_04.txt assets/import/chunk_05.txt > /tmp/bundle.b64
+          cat assets/import/chunk_*.txt > /tmp/bundle.b64
           base64 -d /tmp/bundle.b64 > /tmp/bundle.zip
           unzip -t /tmp/bundle.zip
           mkdir -p assets/mockups
