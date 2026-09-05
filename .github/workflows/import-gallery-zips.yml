@@ -1,0 +1,41 @@
+name: Import gallery ZIPs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/import/*.zip'
+      - '.github/workflows/import-gallery-zips.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import AM galleries
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed=0
+          if [ -f assets/import/am-1.zip ]; then
+            mkdir -p assets/mockups/am-1
+            unzip -o assets/import/am-1.zip -d assets/mockups/am-1
+            rm assets/import/am-1.zip
+            changed=1
+          fi
+          if [ -f assets/import/am-850.zip ]; then
+            mkdir -p assets/mockups/am-850
+            unzip -o assets/import/am-850.zip -d assets/mockups/am-850
+            rm assets/import/am-850.zip
+            changed=1
+          fi
+          if [ "$changed" = "1" ]; then
+            git config user.name 'ArtMone Bot'
+            git config user.email 'actions@users.noreply.github.com'
+            git add assets/mockups assets/import
+            git commit -m 'Import AM1 and AM850 gallery images' || exit 0
+            git push
+          fi
