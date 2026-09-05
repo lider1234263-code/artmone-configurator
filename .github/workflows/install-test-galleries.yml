@@ -1,0 +1,35 @@
+name: Install test galleries
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tmp/am-galleries/**'
+      - 'scripts/install_test_galleries.py'
+      - '.github/workflows/install-test-galleries.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/install_test_galleries.py
+      - name: Commit installed galleries
+        run: |
+          git config user.name "ArtMone Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A assets/mockups/am-1 assets/mockups/am-850 tmp/am-galleries || true
+          if git diff --cached --quiet; then
+            echo "No gallery changes"
+            exit 0
+          fi
+          git commit -m "Install AM1 and AM850 galleries"
+          git push
