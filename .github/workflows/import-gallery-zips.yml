@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          expected=17
+          expected=13
           count=$(find assets/import -maxdepth 1 -name 'chunk_*.txt' | wc -l)
           if [ "$count" -ne "$expected" ]; then
             echo "Waiting for all chunks: $count/$expected"
