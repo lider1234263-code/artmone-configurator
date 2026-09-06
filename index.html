@@ -1687,11 +1687,10 @@ render();
 
 /* ALL_RIBBONS_GALLERY_11_JS */
 (function(){
-  const galleryItems=[
-    ['recolor_01.webp','Фото 01'],['recolor_02.webp','Фото 02'],['recolor_03.webp','Фото 03'],['recolor_04.webp','Фото 04'],
-    ['recolor_05.webp','Фото 05'],['recolor_06.webp','Фото 06'],['recolor_07.webp','Фото 07'],['studio_01.webp','Studio 01'],
-    ['studio_02.webp','Studio 02'],['studio_03.webp','Studio 03'],['studio_white_bg_01.webp','White BG']
-  ];
+  const galleryItems=Array.from({length:11},(_,i)=>({
+    number:String(i+1).padStart(2,'0'),
+    label:'Фото '+String(i+1).padStart(2,'0')
+  }));
   let galleryIndex=0;
   const thumbs=document.getElementById('galleryThumbs');
   const visual=document.querySelector('.photo-gallery');
@@ -1699,9 +1698,12 @@ render();
   function folderFor(code){
     return 'am-'+String(code||'').replace(/^AM\s*/i,'').trim().toLowerCase().replace(/\s+/g,'-');
   }
-  function pathFor(i){
+  function fileCodeFor(code){
+    return String(code||'AM567').toUpperCase().replace(/[Аа]/g,'A').replace(/[Мм]/g,'M').replace(/[^A-Z0-9]/g,'');
+  }
+  function pathFor(i,thumbnail){
     const r=ribbons[colorIndex];
-    return 'assets/mockups/'+folderFor(r&&r.code)+'/'+galleryItems[i][0];
+    return 'assets/mockups/'+folderFor(r&&r.code)+'/'+(thumbnail?'thumbs/':'')+fileCodeFor(r&&r.code)+'_'+galleryItems[i].number+'.webp';
   }
   function currentRibbon(){return ribbons[colorIndex]||{};}
 
@@ -1723,7 +1725,7 @@ render();
   function renderThumbs(){
     if(!thumbs)return;
     thumbs.className='thumbs gallery-11';
-    thumbs.innerHTML=galleryItems.map((it,i)=>'<button class="thumb '+(i===galleryIndex?'active':'')+'" type="button" data-gallery-index="'+i+'" title="'+it[1]+'"><span class="gallery-placeholder">'+String(i+1).padStart(2,'0')+'</span><img src="'+pathFor(i)+'" alt="'+it[1]+'" onerror="this.style.display=\'none\'" onload="this.style.display=\'block\'"></button>').join('');
+    thumbs.innerHTML=galleryItems.map((it,i)=>'<button class="thumb '+(i===galleryIndex?'active':'')+'" type="button" data-gallery-index="'+i+'" title="'+it.label+'"><span class="gallery-placeholder">'+it.number+'</span><img src="'+pathFor(i,true)+'" alt="'+it.label+'" onerror="this.style.display=\'none\'" onload="this.style.display=\'block\'"></button>').join('');
   }
 
   function showMainFallback(){
@@ -1747,7 +1749,7 @@ render();
     if(warehouseMain)warehouseMain.style.display='none';
     if(placeholder)placeholder.style.display='none';
     if(mockupMain){
-      mockupMain.style.display='block'; mockupMain.src=pathFor(galleryIndex); mockupMain.alt=galleryItems[galleryIndex][1];
+      mockupMain.style.display='block'; mockupMain.src=pathFor(galleryIndex); mockupMain.alt=galleryItems[galleryIndex].label;
       mockupMain.onerror=function(){this.style.display='none';showMainFallback()};
       mockupMain.onload=function(){removeMainFallback();this.style.display='block'};
     }
