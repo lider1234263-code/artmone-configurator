@@ -9,6 +9,7 @@
 - Live: `https://artmone-configurator-na4n.vercel.app/`
 - Перевірений функціональний коміт: `2c9aa70f1a8d1e1709f856b6fa3d3068df83cb17`
 - Назва коміту: `Preload gallery photos in the background`
+- GitHub `main`, на основі якого створена ця контрольна точка: `8eeed5403513b614278a35c9fca3417c868e392f`
 - Google Drive, джерело оригіналів: `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`
 - У Drive на момент перевірки: 66 PNG 2048x2048, шість повних комплектів по 11 файлів: `AM1`, `AM5`, `AM6`, `AM8`, `AM009`, `AM850`.
 - Оригінали в Google Drive не змінювалися.
@@ -159,3 +160,17 @@ Google Drive connector використовується для читання о
 7. перевірити 22 live-адреси та картку цього кольору.
 
 Повторити цей цикл для решти 41 кольору.
+
+## 9. Перевірки контрольної точки
+
+- Локальний `main`, `origin/main` і GitHub `main` перед документаційним комітом: `8eeed5403513b614278a35c9fca3417c868e392f`.
+- Git worktree перед зміною документації: clean.
+- Live homepage: HTTP 200, сервер Vercel.
+- Live і локальний `index.html`: точний SHA-256 `aba78ed1231837821b5251fc772298da1efe83a69a2356ea1951b11717ba2b83`.
+- Усі 132 файли шести нових галерей перевірено на live: 132/132 успішні, 0 розбіжностей із репозиторієм.
+- Повні фото: 66 WebP 1600x1600. Мініатюри: 66 WebP 320x320.
+- Обидва inline JavaScript-блоки проходять синтаксичну перевірку.
+- Контрольний тест preloading: 10 фонових фото, максимум 3 одночасно, повторних завантажень немає.
+- Бізнес-правила звірено з кодом: 47 стрічок, 34 кольори друку, чорний +0 грн/м, решта +4 грн/м, AM814/40 мм за прайсом 30 мм, терміновість +20%, максимум 20 позицій.
+- `scripts/import_gallery.py` проходить Python compile check; `vercel.json` є валідним JSON; `git diff --check` успішний.
+- Vercel connector не повертає team/project ID, тому dashboard build duration і runtime scan недоступні. Production перевірено через публічний live, exact hash і всі gallery URLs.

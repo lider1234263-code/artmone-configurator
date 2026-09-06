@@ -4,6 +4,8 @@
 
 Перевірений функціональний коміт: `2c9aa70f1a8d1e1709f856b6fa3d3068df83cb17` (`Preload gallery photos in the background`). Джерело оригіналів: Google Drive `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`.
 
+Остання повна контрольна перевірка виконана на GitHub `main` `8eeed5403513b614278a35c9fca3417c868e392f`. Live `index.html` точно збігся з репозиторієм, SHA-256: `aba78ed1231837821b5251fc772298da1efe83a69a2356ea1951b11717ba2b83`.
+
 На live готові шість комплектів: `AM1`, `AM5`, `AM6`, `AM8`, `AM009`, `AM850`. Кожен має 11 WebP 1600x1600 і 11 thumbnails 320x320. Разом 132 файли; усі live-адреси перевірено і побайтно зіставлено з репозиторієм.
 
 Універсальна назва: `AMCODE_01.webp` ... `AMCODE_11.webp`. Повні фото лежать у `assets/mockups/am-<код>/`, мініатюри у `assets/mockups/am-<код>/thumbs/`. `index.html` автоматично формує ці шляхи для всіх 47 кольорів. Імпортер: `scripts/import_gallery.py`; залежність: `scripts/requirements-gallery.txt`.
