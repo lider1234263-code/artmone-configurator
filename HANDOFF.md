@@ -1,19 +1,15 @@
 # ArtMone configurator: короткий handoff
 
-Продовжуй з GitHub `lider1234263-code/artmone-configurator`, гілка `main`. Live: `https://artmone-configurator-na4n.vercel.app/`. Спочатку прочитай `AGENTS.md`, `PROJECT_CHECKPOINT.md`, `HANDOFF.md` та актуальний `index.html`, потім звір SHA GitHub `main` і live.
+Продовжуй з GitHub `lider1234263-code/artmone-configurator`, гілка `main`. Live: `https://artmone-configurator-na4n.vercel.app/`. Спочатку прочитай `AGENTS.md`, `PROJECT_CHECKPOINT.md`, `HANDOFF.md` і весь актуальний `index.html`; потім звір SHA GitHub `main`, clean/dirty status та live.
 
-Перевірений функціональний коміт: `2c9aa70f1a8d1e1709f856b6fa3d3068df83cb17` (`Preload gallery photos in the background`). Джерело оригіналів: Google Drive `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`.
+Стан перед новою контрольною точкою: `main` був `8eeed5403513b614278a35c9fca3417c868e392f`. Останній робочий функціональний коміт: `2c9aa70f1a8d1e1709f856b6fa3d3068df83cb17` (`Preload gallery photos in the background`). Джерело оригіналів: Google Drive `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`.
 
-Остання повна контрольна перевірка виконана на GitHub `main` `8eeed5403513b614278a35c9fca3417c868e392f`. Live `index.html` точно збігся з репозиторієм, SHA-256: `aba78ed1231837821b5251fc772298da1efe83a69a2356ea1951b11717ba2b83`.
+Проєкт статичний: один `index.html`, 47 кольорів стрічки, 34 кольори друку, без backend/build/package manager. GitHub `main` автоматично деплоїться на Vercel. На live готові `AM1`, `AM5`, `AM6`, `AM8`, `AM009`, `AM850`: по 11 WebP 1600x1600 і 11 thumbs 320x320, разом 132 файли. Галерея формує універсальні шляхи `AMCODE_01.webp` ... `AMCODE_11.webp`; після успішного першого фото підвантажує решту у фоні, максимум три запити одночасно. Імпортер: `scripts/import_gallery.py`.
 
-На live готові шість комплектів: `AM1`, `AM5`, `AM6`, `AM8`, `AM009`, `AM850`. Кожен має 11 WebP 1600x1600 і 11 thumbnails 320x320. Разом 132 файли; усі live-адреси перевірено і побайтно зіставлено з репозиторієм.
+AM567 має лише сім legacy-файлів, не відповідає стандарту і показує placeholder для нових canonical paths. Не генерувати відсутні фото. Ще 41 колір не має повного canonical-комплекту. Кнопки замовлення/контакту ще не передають заявку менеджеру.
 
-Універсальна назва: `AMCODE_01.webp` ... `AMCODE_11.webp`. Повні фото лежать у `assets/mockups/am-<код>/`, мініатюри у `assets/mockups/am-<код>/thumbs/`. `index.html` автоматично формує ці шляхи для всіх 47 кольорів. Імпортер: `scripts/import_gallery.py`; залежність: `scripts/requirements-gallery.txt`.
+Бізнес-правила не змінювати: 100-10 000 м із кроком 100 м і нижчою прайсовою сходинкою, чорний друк без доплати, інші кольори +4 грн/м, терміново +20%, AM814 40 мм за прайсом 30 мм, до 20 позицій, autosave/share, логотип лише локально у браузері.
 
-Після відкриття кольору і успішного показу головного фото сайт у фоні підвантажує решту 10 повних фото, максимум по три одночасно. Найближчі фото мають пріоритет, дублікати запитів не створюються. Функція спільна для всіх 47 карток і автоматично застосовується до нових галерей.
+Точний наступний крок: окремим cleanup-комітом без зміни `index.html` прибрати `assets/import/bundle.zip`, чотири `chunk_*.txt`, мертві workflows `import-gallery-zips.yml` і `unpack-am1-gallery.yml`; перевірити решту одноразових workflows; узгодити або прибрати застарілі `manifest.json`, `_headers`, `README_TECH_ONLY_UA.txt`; зробити commit/push, дочекатися Vercel і перевірити live. Після цього отримати 11 квадратних оригіналів AM567 та нормалізувати їх importer-ом.
 
-Бізнес-правила не змінювати: 47 кольорів стрічки, 34 кольори друку, 100-10 000 м із нижчою прайсовою сходинкою, чорний друк без доплати, інші +4 грн/м, терміново +20%, AM814/40 мм за прайсом 30 мм, до 20 позицій, autosave/share, локальна візуалізація логотипа.
-
-Точний наступний крок: коли користувач додасть наступні 11 PNG `AMCODE_01.png` ... `AMCODE_11.png` у цю саму Drive-папку, отримати лише цей комплект через Google Drive, прогнати importer, перевірити 11 full + 11 thumbs, закомітити в `main`, дочекатися Vercel і перевірити 22 live-адреси. Повторити для решти 41 кольору.
-
-Не використовувати старі ZIP/chunks та `recolor/studio` назви. Не змінювати Drive-оригінали. Не генерувати фото. Не казати «готово», доки GitHub, Vercel і live не перевірені.
+Не використовувати ZIP/chunks або старі `recolor/studio` назви. Не змінювати Drive-оригінали. Не комітити логотипи клієнтів. Не повідомляти про завершення без commit/push, Vercel deployment і live-перевірки.
