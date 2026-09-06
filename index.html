@@ -816,11 +816,11 @@ h1,
 .logo-intro{margin-top:3px;display:flex;flex-direction:column;gap:3px}
 .logo-intro b{font-size:11px;line-height:1.2}
 .logo-intro span{color:var(--muted);font-size:8px;line-height:1.3}
-.logo-upload{margin-top:10px;min-height:66px;padding:10px 11px;border:1px dashed #d5c8b7;border-radius:11px;background:#faf7f2;display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:9px;align-items:center}
+.logo-upload{margin-top:10px;min-height:66px;padding:10px 11px;border:1px dashed #d5c8b7;border-radius:11px;background:#faf7f2;display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:9px;align-items:center;cursor:pointer}
 .logo-upload-icon{width:32px;height:32px;border-radius:9px;background:#efe5d6;display:grid;place-items:center;font-size:17px}
 .logo-upload-copy b{display:block;font-size:9.5px}
 .logo-upload-copy span{display:block;margin-top:3px;color:var(--muted);font-size:7px;line-height:1.25}
-.logo-upload-btn{min-height:30px;padding:0 10px;border:1px solid #d1c0a5;border-radius:8px;background:#f2e8da;color:#1d1b18;font-size:8px;font-weight:700;cursor:pointer}
+.logo-upload-btn{min-height:30px;padding:0 10px;border:1px solid #d1c0a5;border-radius:8px;background:#f2e8da;color:#1d1b18;font-size:8px;font-weight:700;cursor:pointer;display:grid;place-items:center}
 .logo-loaded{margin-top:10px;padding:9px 10px;border:1px solid var(--line);border-radius:11px;background:#fbfaf8;display:grid;grid-template-columns:46px minmax(0,1fr);gap:9px;align-items:center}
 .logo-preview{width:46px;height:46px;border:1px solid #e2ddd6;border-radius:9px;background:#fff;overflow:hidden;display:grid;place-items:center;color:#9a948d;font-size:7px}
 .logo-preview img{width:100%;height:100%;object-fit:contain}
@@ -1048,10 +1048,10 @@ max-width:calc(100% - 32px)!important;
     <b>Побачте свій логотип на стрічці онлайн</b>
     <span>Безкоштовна візуалізація прямо в конфігураторі</span>
   </div>
-  <div class="logo-upload" id="logoUploadState">
+  <div class="logo-upload" id="logoUploadState" role="button" tabindex="0" aria-label="Завантажити логотип">
     <div class="logo-upload-icon">＋</div>
     <div class="logo-upload-copy"><b>Завантажити логотип</b><span>PNG, JPG, SVG або PDF · прозорий, білий, чорний чи однотонний фон</span></div>
-    <button type="button" class="logo-upload-btn" id="uploadSharedLogo">Обрати файл</button>
+    <span class="logo-upload-btn" id="uploadSharedLogo">Обрати файл</span>
   </div>
   <div class="logo-loaded hidden" id="logoLoadedState">
     <div class="logo-preview" id="logoPreview"><span>LOGO</span></div>
@@ -1553,7 +1553,8 @@ function render(){const r=ribbons[colorIndex],p=prints[printIndex],c=calc();$$("
 function setColor(i){colorIndex=i;const r=ribbons[i];if(!r.widths.includes(width))width=r.widths.find(w=>prices[w])||r.widths[0];if(!isPrintAllowedForRibbon(printIndex,i))printIndex=firstAllowedPrintIndex(i);render()}
 $$(".term").forEach(b=>b.onclick=()=>{urgent=b.dataset.u==="1";$$(".term").forEach(x=>x.classList.toggle("active",x===b));render()});
 $("#addRibbonMain").onclick=addRibbon;
-$("#uploadSharedLogo").onclick=()=>$("#sharedLogoInput").click();
+$("#logoUploadState").onclick=()=>$("#sharedLogoInput").click();
+$("#logoUploadState").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();$("#sharedLogoInput").click()}};
 $("#sharedLogoInput").onchange=async e=>{const f=e.target.files&&e.target.files[0];if(f)await setSharedLogo(f);e.target.value=""};
 $("#customLogoInput").onchange=async e=>{const f=e.target.files&&e.target.files[0];if(f)await setCustomLogo(f);e.target.value=""};
 $("#shareConfig").onclick=async()=>{const u=new URL(location.href);u.searchParams.set("cfg",encodeConfig());const link=u.toString();try{if(navigator.share){await navigator.share({title:"Моя конфігурація ArtMone",url:link});return}await navigator.clipboard.writeText(link);showToast("Посилання скопійовано")}catch(e){}};
