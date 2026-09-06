@@ -29,6 +29,8 @@ h1{font:500 43px/1.04 Georgia,serif;margin:3px 0 8px}.subtitle{color:var(--muted
 
 .photo-gallery{background:#e9dfd4}
 .gallery-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gallery-media.gallery-clickable{cursor:zoom-in}
+.gallery-media.gallery-clickable:focus-visible{outline:3px solid #171717;outline-offset:-4px}
 #mockupCanvas{display:block}
 #galleryThumbs .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 #galleryThumbs .thumb{background:#eee7dc}
@@ -1813,13 +1815,28 @@ render();
     galleryIndex=Number(btn.dataset.galleryIndex)||0; renderGallery11();
   });
 
-  const expand=document.getElementById('galleryExpand');
-  if(expand)expand.addEventListener('click',()=>{
+  function openGalleryLightbox(){
     const lb=document.getElementById('galleryLightbox'); if(!lb)return;
     const img=lb.querySelector('img'), ph=lb.querySelector('.lightbox-placeholder');
     img.style.display='block'; ph.style.display='none'; img.src=pathFor(galleryIndex);
     img.onerror=()=>{img.style.display='none';ph.style.display='grid';ph.textContent='Фото '+String(galleryIndex+1).padStart(2,'0')+' буде додано'};
     lb.classList.add('open');
+  }
+
+  const expand=document.getElementById('galleryExpand');
+  if(expand)expand.addEventListener('click',openGalleryLightbox);
+
+  ['mockupMain','warehouseMain'].forEach(id=>{
+    const media=document.getElementById(id); if(!media)return;
+    media.classList.add('gallery-clickable');
+    media.setAttribute('role','button');
+    media.setAttribute('tabindex','0');
+    media.setAttribute('aria-label','Розгорнути фото');
+    media.addEventListener('click',openGalleryLightbox);
+    media.addEventListener('keydown',e=>{
+      if(e.key!=='Enter'&&e.key!==' ')return;
+      e.preventDefault(); openGalleryLightbox();
+    });
   });
 
   window.updateGallery=renderGallery11;
