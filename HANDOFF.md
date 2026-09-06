@@ -2,11 +2,13 @@
 
 Продовжуй з GitHub `lider1234263-code/artmone-configurator`, гілка `main`. Live: `https://artmone-configurator-na4n.vercel.app/`. Спочатку прочитай `AGENTS.md`, `PROJECT_CHECKPOINT.md`, `HANDOFF.md` та актуальний `index.html`, потім звір SHA GitHub `main` і live.
 
-Перевірений функціональний коміт: `f1e1d75134423b4dee9e87d47ab600f3c6614cb4` (`Sync six Drive galleries with universal image naming`). Джерело оригіналів: Google Drive `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`.
+Перевірений функціональний коміт: `2c9aa70f1a8d1e1709f856b6fa3d3068df83cb17` (`Preload gallery photos in the background`). Джерело оригіналів: Google Drive `https://drive.google.com/drive/folders/12RJaeKrmLchaJoqVuvmczhb7DavVJqU4`.
 
 На live готові шість комплектів: `AM1`, `AM5`, `AM6`, `AM8`, `AM009`, `AM850`. Кожен має 11 WebP 1600x1600 і 11 thumbnails 320x320. Разом 132 файли; усі live-адреси перевірено і побайтно зіставлено з репозиторієм.
 
 Універсальна назва: `AMCODE_01.webp` ... `AMCODE_11.webp`. Повні фото лежать у `assets/mockups/am-<код>/`, мініатюри у `assets/mockups/am-<код>/thumbs/`. `index.html` автоматично формує ці шляхи для всіх 47 кольорів. Імпортер: `scripts/import_gallery.py`; залежність: `scripts/requirements-gallery.txt`.
+
+Після відкриття кольору і успішного показу головного фото сайт у фоні підвантажує решту 10 повних фото, максимум по три одночасно. Найближчі фото мають пріоритет, дублікати запитів не створюються. Функція спільна для всіх 47 карток і автоматично застосовується до нових галерей.
 
 Бізнес-правила не змінювати: 47 кольорів стрічки, 34 кольори друку, 100-10 000 м із нижчою прайсовою сходинкою, чорний друк без доплати, інші +4 грн/м, терміново +20%, AM814/40 мм за прайсом 30 мм, до 20 позицій, autosave/share, локальна візуалізація логотипа.
 
