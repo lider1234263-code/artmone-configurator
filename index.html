@@ -1694,6 +1694,11 @@ render();
   let galleryIndex=0;
   const thumbs=document.getElementById('galleryThumbs');
   const visual=document.querySelector('.photo-gallery');
+  const fullImageCache=new Map();
+  const preloadQueue=[];
+  const queuedPreloads=new Set();
+  const MAX_BACKGROUND_PRELOADS=3;
+  let activePreloads=0;
 
   function folderFor(code){
     return 'am-'+String(code||'').replace(/^AM\s*/i,'').trim().toLowerCase().replace(/\s+/g,'-');
@@ -1701,11 +1706,45 @@ render();
   function fileCodeFor(code){
     return String(code||'AM567').toUpperCase().replace(/[Аа]/g,'A').replace(/[Мм]/g,'M').replace(/[^A-Z0-9]/g,'');
   }
-  function pathFor(i,thumbnail){
-    const r=ribbons[colorIndex];
+  function pathForRibbon(r,i,thumbnail){
     return 'assets/mockups/'+folderFor(r&&r.code)+'/'+(thumbnail?'thumbs/':'')+fileCodeFor(r&&r.code)+'_'+galleryItems[i].number+'.webp';
   }
+  function pathFor(i,thumbnail){return pathForRibbon(ribbons[colorIndex],i,thumbnail)}
   function currentRibbon(){return ribbons[colorIndex]||{};}
+
+  function startQueuedPreloads(){
+    while(activePreloads<MAX_BACKGROUND_PRELOADS && preloadQueue.length){
+      const url=preloadQueue.shift();
+      queuedPreloads.delete(url);
+      if(fullImageCache.has(url))continue;
+      activePreloads++;
+      const image=new Image();
+      fullImageCache.set(url,image);
+      image.decoding='async';
+      const finish=()=>{activePreloads--;startQueuedPreloads()};
+      image.onload=finish;
+      image.onerror=()=>{fullImageCache.delete(url);finish()};
+      image.src=url;
+    }
+  }
+
+  function preloadGalleryInBackground(ribbon,selectedIndex){
+    const ribbonCode=fileCodeFor(ribbon&&ribbon.code);
+    const begin=()=>{
+      if(fileCodeFor(currentRibbon().code)!==ribbonCode)return;
+      const order=galleryItems.map((_,i)=>i).filter(i=>i!==selectedIndex);
+      order.sort((a,b)=>Math.abs(a-selectedIndex)-Math.abs(b-selectedIndex));
+      order.reverse().forEach(i=>{
+        const url=pathForRibbon(ribbon,i,false);
+        if(fullImageCache.has(url)||queuedPreloads.has(url))return;
+        queuedPreloads.add(url);
+        preloadQueue.unshift(url);
+      });
+      startQueuedPreloads();
+    };
+    if('requestIdleCallback' in window)window.requestIdleCallback(begin,{timeout:1200});
+    else window.setTimeout(begin,100);
+  }
 
   if(visual && !document.getElementById('galleryExpand')){
     const b=document.createElement('button');
@@ -1749,9 +1788,16 @@ render();
     if(warehouseMain)warehouseMain.style.display='none';
     if(placeholder)placeholder.style.display='none';
     if(mockupMain){
-      mockupMain.style.display='block'; mockupMain.src=pathFor(galleryIndex); mockupMain.alt=galleryItems[galleryIndex].label;
+      const ribbon=currentRibbon();
+      const selectedIndex=galleryIndex;
+      const requestedPath=pathFor(selectedIndex);
+      mockupMain.style.display='block'; mockupMain.src=requestedPath; mockupMain.alt=galleryItems[selectedIndex].label;
       mockupMain.onerror=function(){this.style.display='none';showMainFallback()};
-      mockupMain.onload=function(){removeMainFallback();this.style.display='block'};
+      mockupMain.onload=function(){
+        if(this.getAttribute('src')!==requestedPath)return;
+        removeMainFallback();this.style.display='block';
+        preloadGalleryInBackground(ribbon,selectedIndex);
+      };
     }
   }
 
